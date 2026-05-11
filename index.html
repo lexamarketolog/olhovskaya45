@@ -827,6 +827,91 @@ body, button, input, select, textarea {
 .lb-badge--reno   { background: rgba(20,30,42,.9); color: #E0A80D; border: 1px solid rgba(224,168,13,.35); }
 .lb-badge--render { background: rgba(20,30,42,.9); color: #7ECFB3; border: 1px solid rgba(126,207,179,.35); }
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Ольховская 45с1",
+      "url": "https://olhovka45.ru",
+      "description": "Готовый арендный бизнес у трёх вокзалов Москвы. Нежилое помещение 93 м², хостел, договор 5 лет."
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://olhovka45.ru/#property",
+      "name": "Ольховская 45с1 — коммерческая недвижимость",
+      "description": "Нежилое административное здание 93 м² у трёх вокзалов Москвы. Действующий хостел, договор аренды 5 лет, аренда 180 000 ₽/мес, индексация 10%/год.",
+      "url": "https://olhovka45.ru",
+      "telephone": "+79091650088",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Ольховская, 45с1",
+        "addressLocality": "Москва",
+        "addressRegion": "Центральный административный округ",
+        "postalCode": "107023",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.777701,
+        "longitude": 37.673069
+      },
+      "hasMap": "https://yandex.ru/maps/?pt=37.673069,55.777701&z=17&text=Ольховская+45с1",
+      "sameAs": [
+        "https://www.cian.ru/sale/commercial/314354278/",
+        "https://www.avito.ru/moskva/kommercheskaya_nedvizhimost/psn_93_m_5_min._m.baumanskaya_gab_180k_7462265939",
+        "https://t.me/+0iuc37VSQmYzYTRi"
+      ],
+      "priceRange": "29 000 000 ₽",
+      "currenciesAccepted": "RUB",
+      "openingHours": "Mo-Su 09:00-21:00",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+79091650088",
+        "contactType": "sales",
+        "availableLanguage": "Russian"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Продажа: Ольховская 45с1, 93 м², ЦАО",
+      "description": "Готовый арендный бизнес. Хостел с договором 5 лет, аренда 180 000 ₽/мес.",
+      "url": "https://olhovka45.ru",
+      "price": "29000000",
+      "priceCurrency": "RUB",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Person",
+        "name": "Григорий Куприн",
+        "telephone": "+79091650088",
+        "url": "https://t.me/GrigoryKuprin"
+      },
+      "itemOffered": {
+        "@type": "Accommodation",
+        "name": "Нежилое административное здание 93 м²",
+        "floorSize": { "@type": "QuantitativeValue", "value": 93, "unitCode": "MTK" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Ольховская, 45с1",
+          "addressLocality": "Москва",
+          "addressRegion": "ЦАО"
+        }
+      }
+    }
+  ]
+}
+</script>
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://olhovka45.ru/media/photo_render_01.jpeg">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="933">
+<meta property="og:site_name" content="Ольховская 45с1">
+<meta name="geo.region" content="RU-MOW">
+<meta name="geo.placename" content="Москва, ул. Ольховская 45с1">
+<meta name="geo.position" content="55.777701;37.673069">
+<meta name="ICBM" content="55.777701, 37.673069">
 </head>
 <body>
 
@@ -1084,6 +1169,14 @@ body, button, input, select, textarea {
         <div class="map-pin-pulse"></div>
       </div>
       <div data-a>
+        <div style="margin-bottom:16px;">
+          <button onclick="copyCoords()" id="coordsBtn"
+            style="display:inline-flex;align-items:center;gap:8px;background:var(--off);border:1px solid var(--border);border-radius:10px;padding:9px 16px;font-size:13px;font-weight:700;color:var(--mid);cursor:pointer;font-family:inherit;transition:all .2s;"
+            title="Нажмите чтобы скопировать координаты">
+            📍 55.777701, 37.673069
+            <span id="coordsHint" style="color:var(--soft);font-weight:400;">— скопировать</span>
+          </button>
+        </div>
         <div class="s-tag">Локация</div>
         <h2 class="s-title">Самое транспортное место Москвы</h2>
         <p class="s-sub">Три вокзала и три линии метро в пешей доступности.</p>
@@ -1214,8 +1307,15 @@ body, button, input, select, textarea {
 </section>
 
 <footer>
+  <p><a href="/articles/" style="color:var(--soft);text-decoration:underline;text-underline-offset:3px;">Статьи об инвестициях в недвижимость</a></p>
   <p>© 2026 Ольховская 45с1 — Прямая продажа от собственника</p>
   <p style="margin-top:10px;">Telegram: <a href="https://t.me/GrigoryKuprin">@GrigoryKuprin</a> · Москва, Ольховская ул., 45с1, ЦАО</p>
+  <p style="margin-top:12px;font-size:12px;color:var(--soft);display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+    <a href="https://www.cian.ru/sale/commercial/314354278/" target="_blank" rel="noopener" style="color:var(--soft);">Объект на ЦИАН</a>
+    <a href="https://www.avito.ru/moskva/kommercheskaya_nedvizhimost/psn_93_m_5_min._m.baumanskaya_gab_180k_7462265939" target="_blank" rel="noopener" style="color:var(--soft);">Объект на Авито</a>
+    <a href="https://t.me/+0iuc37VSQmYzYTRi" target="_blank" rel="noopener" style="color:var(--soft);">Telegram-канал</a>
+    <a href="/articles/" style="color:var(--soft);">Статьи об инвестициях</a>
+  </p>
   <p style="margin-top:14px;font-size:12px;color:var(--soft);">Сайт сделан <a href="https://axdigital.ru/?from=olhovka45" target="_blank" rel="follow noopener" style="color:var(--soft);text-decoration:underline;text-underline-offset:3px;">Лёхой Маркетологом</a></p>
 </footer>
 
@@ -1445,6 +1545,24 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
 }, { threshold: 0.1 });
 document.querySelectorAll('[data-a]').forEach(el => obs.observe(el));
+
+// ── Координаты ──────────────────────────────────────────
+function copyCoords() {
+  const btn = document.getElementById('coordsBtn');
+  const hint = document.getElementById('coordsHint');
+  navigator.clipboard.writeText('55.777701, 37.673069').then(() => {
+    hint.textContent = ' ✓ Скопировано!';
+    btn.style.borderColor = 'var(--gold)';
+    btn.style.color = 'var(--gold)';
+    setTimeout(() => {
+      hint.textContent = '— скопировать';
+      btn.style.borderColor = '';
+      btn.style.color = '';
+    }, 2500);
+  }).catch(() => {
+    hint.textContent = '55.777701, 37.673069';
+  });
+}
 
 // ── Smooth scroll ────────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a => {

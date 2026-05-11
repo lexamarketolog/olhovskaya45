@@ -125,11 +125,36 @@ olhovskaya45/
 
 ### Технические детали сайта
 
-- Статический HTML без фреймворков
-- OTP-верификация email для скачивания инвестиционного меморандума PDF
+- Статический HTML без фреймворков, Manrope font, OKLCH цвета
+- OTP-верификация email → скачивание PDF-меморандума
 - Email-воронка: 7 писем на 45 дней (welcome → keep in touch)
-- Яндекс.Метрика: счётчик 109103454, цели по всей воронке меморандума
-- Бэкенд: Node.js + Express + Puppeteer (Docker)
+- Яндекс.Метрика: счётчик 109103454, 5 целей по воронке меморандума
+- Бэкенд: Node.js + Express + Puppeteer (Docker, порт 8801)
+- Schema.org: LocalBusiness + Offer + WebSite + Article
+- 11 SEO-статей в `/articles/` с полной перелинковкой
+- Координаты 55.777701, 37.673069 — копируются по клику
+
+### Листинги объекта
+
+- 🏢 [ЦИАН](https://www.cian.ru/sale/commercial/314354278/)
+- 📋 [Авито](https://www.avito.ru/moskva/kommercheskaya_nedvizhimost/psn_93_m_5_min._m.baumanskaya_gab_180k_7462265939)
+- 📢 [Telegram-канал объекта](https://t.me/+0iuc37VSQmYzYTRi)
+
+### 11 SEO-статей (`/articles/`)
+
+| # | Статья | Целевой запрос |
+|---|---|---|
+| 01 | [Купить КН в Москве с арендатором](/articles/article-01-kupit-kommercheskuyu/) | купить КН в москве с арендатором |
+| 02 | [Готовый арендный бизнес в Москве](/articles/article-02-gotoviy-arendniy-biznes/) | ГАБ в москве |
+| 03 | [Доходность КН в Москве](/articles/article-03-dokhodnost-kommercheskoy/) | доходность КН |
+| 04 | [Недвижимость или депозит](/articles/article-04-nedvizhimost-ili-depozit/) | инвестиции в КН |
+| 05 | [ЦАО vs другие округа](/articles/article-05-cao-luchshaya-lokaciya/) | нежилое ЦАО |
+| 06 | [Хостел как арендатор](/articles/article-06-hostel-kak-arendator/) | надёжный арендатор |
+| 07 | [Закон Хованской 2026](/articles/article-07-zakon-hovanskoy/) | закон хованской хостелы |
+| 08 | [Куда вложить 30 млн](/articles/article-08-kuda-vlozhit-30-millionov/) | куда вложить 30 млн рублей |
+| 09 | [Три вокзала Москвы](/articles/article-09-tri-vokzala-lokaciya/) | три вокзала КН |
+| 10 | [НДФЛ при продаже КН](/articles/article-10-ndfl-prodazha-kommercheskoy/) | НДФЛ продажа нежилого |
+| 11 | [Расчёт доходности ГАБ](/articles/article-11-kak-schitat-dokhodnost/) | расчёт доходности недвижимости |
 
 ---
 
