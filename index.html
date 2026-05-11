@@ -2,6 +2,15 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1C2B3A">
+<meta name="msapplication-TileColor" content="#1C2B3A">
+<meta name="msapplication-TileImage" content="/favicon-192.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
@@ -923,6 +932,7 @@ body, button, input, select, textarea {
     <li><a href="#gallery">Фото</a></li>
     <li><a href="#finance">Доходность</a></li>
     <li><a href="#location">Локация</a></li>
+    <li><a href="/articles/">Статьи</a></li>
     <li><a href="#contacts" class="nav-cta">Связаться</a></li>
   </ul>
   <div class="nav-ham" id="ham" onclick="toggleMenu()">
@@ -935,6 +945,7 @@ body, button, input, select, textarea {
   <a href="#finance"  onclick="closeMenu()">Доходность</a>
   <a href="#location" onclick="closeMenu()">Локация</a>
   <a href="#analytics"onclick="closeMenu()">Аналитика BestPlace</a>
+  <a href="/articles/" onclick="closeMenu()">Статьи об инвестициях</a>
   <a href="#contacts" onclick="closeMenu()">Связаться →</a>
 </div>
 
@@ -1275,41 +1286,82 @@ body, button, input, select, textarea {
 
 
 <!-- OWNER -->
-<section class="owner-sec" id="owner">
-  <div class="wrap">
-    <div class="owner-card" data-a>
+<section id="owner" style="background:#fff;padding:72px 32px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div data-a style="display:grid;grid-template-columns:240px 1fr;gap:52px;align-items:center;background:#F4F6F9;border-radius:22px;padding:44px;box-sizing:border-box;">
+
+      <!-- Фото -->
       <img
         src="media/grigory.jpeg"
-        alt="Григорий Куприн — владелец объекта Ольховская 45с1"
-        class="owner-photo"
+        alt="Григорий Куприн — владелец Ольховская 45с1"
         loading="lazy"
-        width="220"
+        style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top center;border-radius:16px;box-shadow:0 8px 32px rgba(28,43,58,.2);display:block;"
       >
+
+      <!-- Текст -->
       <div>
-        <div class="owner-tag">Владелец объекта · прямая продажа</div>
-        <h2 class="owner-name">Григорий Куприн</h2>
-        <p class="owner-text">
-          Продаю этот объект сам, без агентов и посредников.
-          Покажу помещение в любой день — вы увидите работающий хостел
-          и поговорите с арендатором напрямую.
-          Отвечу на вопросы по документам, финансовой модели, ипотеке.
-          Пишите — не стесняйтесь.
+        <div style="font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:#C8920A;margin-bottom:12px;">Владелец объекта · прямая продажа</div>
+        <div style="font-size:38px;font-weight:900;color:#1C2B3A;line-height:1.1;margin-bottom:18px;">Григорий Куприн</div>
+        <p style="color:#3A4F65;font-size:17px;line-height:1.75;margin-bottom:32px;max-width:50ch;">
+          Продаю сам, без агентов. Покажу объект в любой день — увидите работающий хостел и поговорите с арендатором лично. Отвечу на вопросы по документам, финансовой модели и ипотеке. Пишите — не стесняйтесь.
         </p>
-        <div class="owner-socials">
-          <a href="https://t.me/GrigoryKuprin" class="owner-social-btn tg" target="_blank" rel="noopener">
-            ✈️ Telegram @GrigoryKuprin
+
+        <!-- Кнопки соцсетей -->
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+
+          <!-- Telegram -->
+          <a href="https://t.me/GrigoryKuprin" target="_blank" rel="noopener"
+            style="display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:12px;background:#fff;border:2px solid #2AABEE;color:#2AABEE;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;"
+            onmouseover="this.style.background='#2AABEE';this.style.color='#fff'"
+            onmouseout="this.style.background='#fff';this.style.color='#2AABEE'">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.607c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.607l-2.95-.924c-.642-.2-.654-.642.136-.953l11.527-4.448c.535-.194 1.003.13.37.966z"/>
+            </svg>
+            @GrigoryKuprin
           </a>
-          <a href="https://vk.com/kupringrigory" class="owner-social-btn vk" target="_blank" rel="noopener">
-            VK
+
+          <!-- VK -->
+          <a href="https://vk.com/kupringrigory" target="_blank" rel="noopener"
+            style="display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:12px;background:#fff;border:2px solid #0077FF;color:#0077FF;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;"
+            onmouseover="this.style.background='#0077FF';this.style.color='#fff'"
+            onmouseout="this.style.background='#fff';this.style.color='#0077FF'">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.585-1.496c.598-.19 1.365 1.26 2.179 1.815.615.422 1.082.33 1.082.33l2.17-.03s1.137-.07.598-1.011c-.044-.072-.314-.657-1.617-1.856-1.365-1.255-1.182-1.052.462-3.224.999-1.328 1.397-2.14 1.272-2.487-.12-.33-.855-.243-.855-.243l-2.44.016s-.181-.025-.315.055c-.132.078-.216.26-.216.26s-.387 1.028-.903 1.903c-1.088 1.846-1.524 1.944-1.702 1.83-.414-.267-.31-1.073-.31-1.646 0-1.79.271-2.534-.529-2.725-.265-.064-.46-.106-1.138-.113-.87-.01-1.607.003-2.023.207-.277.135-.49.437-.36.454.16.022.523.098.715.36.248.34.239 1.103.239 1.103s.142 2.107-.333 2.368c-.327.177-.774-.184-1.733-1.836-.493-.852-.866-1.795-.866-1.795s-.072-.175-.202-.269c-.157-.114-.376-.15-.376-.15l-2.318.015s-.348.01-.476.161c-.114.135-.009.414-.009.414s1.814 4.243 3.868 6.382c1.884 1.96 4.025 1.832 4.025 1.832h.97z"/>
+            </svg>
+            ВКонтакте
           </a>
-          <a href="https://max.ru/u/f9LHodD0cOIZCQ2tWZIr45eCUuEKm4Kqyqbih5kht8iCNAX4yll6XkoNpYg" class="owner-social-btn max" target="_blank" rel="noopener">
+
+          <!-- MAX -->
+          <a href="https://max.ru/u/f9LHodD0cOIZCQ2tWZIr45eCUuEKm4Kqyqbih5kht8iCNAX4yll6XkoNpYg" target="_blank" rel="noopener"
+            style="display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:12px;background:#fff;border:2px solid #FF4D00;color:#FF4D00;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;"
+            onmouseover="this.style.background='#FF4D00';this.style.color='#fff'"
+            onmouseout="this.style.background='#fff';this.style.color='#FF4D00'">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+            </svg>
             MAX
           </a>
+
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Мобайл owner -->
+<style>
+@media(max-width:860px){
+  #owner > div > div[data-a]{grid-template-columns:180px 1fr!important;gap:28px!important;padding:28px!important}
+}
+@media(max-width:600px){
+  #owner{padding:40px 16px!important}
+  #owner > div > div[data-a]{grid-template-columns:1fr!important;padding:24px!important;text-align:center}
+  #owner img{width:130px!important;aspect-ratio:1/1!important;border-radius:50%!important;margin:0 auto!important}
+  #owner div[style*="display:flex;flex-wrap"]{justify-content:center}
+  #owner div[style*="font-size:38px"]{font-size:26px!important}
+  #owner p{font-size:15px!important;max-width:none!important}
+}
+</style>
 
 <!-- DEAL -->
 <section class="deal-sec" id="deal">
