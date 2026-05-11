@@ -2,15 +2,6 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#1C2B3A">
-<meta name="msapplication-TileColor" content="#1C2B3A">
-<meta name="msapplication-TileImage" content="/favicon-192.png">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Нулевой НДФЛ при продаже коммерческой недвижимости: как работает статья 217.1 НК РФ</title>
 <meta name="description" content="Три сценария: продажа через 3 года, 5 лет и сразу — с реальными суммами налога. Как сэкономить от 1 до 5 млн рублей, правильно выбрав момент продажи.">
@@ -109,13 +100,36 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
   .related li a{font-size:14px}
   .site-header{padding:12px 16px}
 }
+
+
+.art-widget{background:#F4F6F9;border-radius:16px;padding:28px;margin:32px 0}
+.art-widget h3{font-size:16px;font-weight:800;color:#1C2B3A;margin-bottom:16px}
+.art-widget canvas{max-height:300px}
+.art-calc-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.art-calc-row label{font-size:13px;color:#5E7389;min-width:160px}
+.art-calc-row input[type=range]{flex:1;accent-color:#C8920A;min-width:120px}
+.art-calc-row .val{font-size:15px;font-weight:800;color:#1C2B3A;min-width:80px;text-align:right}
+.art-result{background:#1C2B3A;color:#fff;border-radius:12px;padding:16px 20px;margin-top:16px;font-size:15px;font-weight:700;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.art-result span{color:#C8920A;font-size:20px}
+.art-checklist{list-style:none;margin:0;padding:0}
+.art-checklist li{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:15px;line-height:1.5;color:#1A2738}
+.art-checklist input[type=checkbox]{accent-color:#C8920A;width:16px;height:16px;margin-top:3px;flex-shrink:0;cursor:pointer}
+.art-checklist label{cursor:pointer}
+.art-checklist input:checked+label{text-decoration:line-through;color:#5E7389}
+.art-timeline{position:relative;padding-left:24px;margin:0}
+.art-timeline::before{content:'';position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:#DDE3EC}
+.art-timeline li{position:relative;margin-bottom:16px;list-style:none}
+.art-timeline li::before{content:'';position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:#C8920A;border:2px solid #fff;box-shadow:0 0 0 2px #C8920A}
+.art-timeline .tl-year{font-size:12px;font-weight:800;color:#C8920A;text-transform:uppercase;letter-spacing:.5px}
+.art-timeline .tl-text{font-size:14px;color:#3A4F65;margin-top:2px}
+.art-quiz-q{font-size:15px;font-weight:700;color:#1C2B3A;margin-bottom:10px}
+.art-quiz-btns{display:flex;gap:10px;flex-wrap:wrap}
+.art-quiz-btns button{background:#fff;border:2px solid #DDE3EC;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:700;cursor:pointer;color:#1C2B3A;transition:all .2s}
+.art-quiz-btns button:hover,.art-quiz-btns button.active{background:#C8920A;border-color:#C8920A;color:#fff}
+.art-quiz-result{background:#1C2B3A;color:#fff;border-radius:12px;padding:16px 20px;margin-top:16px;font-size:15px;font-weight:700;display:none}
+.art-quiz-result.show{display:block}
+
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Нужно ли платить налог при продаже нежилой недвижимости?',"acceptedAnswer":{"@type":"Answer","text":'Для физических лиц: при владении 5 лет и более — налог 0% (ст. 217.1 НК РФ). При продаже раньше — НДФЛ 13% с разницы между ценой продажи и покупки.'}},
-{"@type":"Question","name":'Распространяется ли льгота на нежилые объекты?',"acceptedAnswer":{"@type":"Answer","text":'Да. Статья 217.1 применяется к любой недвижимости, принадлежащей физлицу — жилой и нежилой. Пятилетний минимальный срок владения действует для обеих категорий.'}},
-{"@type":"Question","name":'Что если я ИП — теряю ли льготу?',"acceptedAnswer":{"@type":"Answer","text":'Если ИП использует объект в предпринимательской деятельности и учитывает его в расходах — льгота не применяется, налог платится по ставке ИП. Для сохранения льготы объект должен быть в личной собственности физлица, не в деловом обороте ИП.'}}]}
-</script>
-<style>details[open] summary span{transform:rotate(45deg)}details summary::-webkit-details-marker{display:none}</style>
 </head>
 <body>
 <header class="site-header">
@@ -135,6 +149,41 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <p>Для большинства объектов недвижимости (купленных после 1 января 2016 года) <strong>минимальный срок — 5 лет</strong>. После 5 лет владения — НДФЛ ноль, независимо от суммы прибыли.</p>
 <p>Исключение: если объект получен в наследство, дар от близкого родственника или по приватизации — срок сокращается до 3 лет. Для коммерческой недвижимости, купленной по договору купли-продажи, это исключение не работает.</p>
 <p>Важный нюанс: норма распространяется на физических лиц. Если объект оформлен на ИП или юридическое лицо — другие правила и другие налоги.</p>
+
+<div class="art-widget">
+<h3>Калькулятор НДФЛ при продаже коммерческой недвижимости</h3>
+<div class="art-calc-row">
+  <label>Цена продажи (млн ₽)</label>
+  <input type="range" id="a10sell" min="5" max="150" step="1" value="40" oninput="calcA10()">
+  <div class="val" id="a10sellV">40 млн ₽</div>
+</div>
+<div class="art-calc-row">
+  <label>Цена покупки (млн ₽)</label>
+  <input type="range" id="a10buy" min="5" max="100" step="1" value="29" oninput="calcA10()">
+  <div class="val" id="a10buyV">29 млн ₽</div>
+</div>
+<div class="art-result">
+  <div>До 5 лет: НДФЛ 20%: <span id="a10tax1">—</span></div>
+  <div>После 5 лет: НДФЛ: <span id="a10tax2">0 ₽</span></div>
+  <div>Экономия: <span id="a10save">—</span></div>
+</div>
+<script>
+(function(){
+  window.calcA10=function(){
+    var sell=parseInt(document.getElementById('a10sell').value)*1000000;
+    var buy=parseInt(document.getElementById('a10buy').value)*1000000;
+    document.getElementById('a10sellV').textContent=parseInt(document.getElementById('a10sell').value)+' млн ₽';
+    document.getElementById('a10buyV').textContent=parseInt(document.getElementById('a10buy').value)+' млн ₽';
+    var profit=Math.max(0,sell-buy);
+    var tax=Math.round(profit*0.2);
+    document.getElementById('a10tax1').textContent=(tax/1000000).toFixed(2)+' млн ₽';
+    document.getElementById('a10tax2').textContent='0 ₽';
+    document.getElementById('a10save').textContent=(tax/1000000).toFixed(2)+' млн ₽';
+  };
+  calcA10();
+})();
+</script>
+</div>
 <h2>Три сценария с расчётами</h2>
 <h3>Сценарий 1: Продажа сразу после покупки</h3>
 <p>Допустим, купили за 29 млн, через полгода нашли покупателя за 31 млн (рыночный рост + торг).</p>
@@ -186,31 +235,33 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <p><strong>Имущественный вычет.</strong> Физическое лицо может применить вычет 250 000 ₽ (для нежилого имущества) — небольшой, но всё же.</p>
 <p><strong>Расрочка платежа.</strong> В некоторых случаях структурирование сделки с рассрочкой позволяет управлять налоговой базой по годам. Это требует налогового консультанта.</p>
 <p>Ни один из этих инструментов не даёт нулевого налога. Только ожидание 5 лет даёт ноль.</p>
+
+<!-- art-widgets-v1 -->
+<div class="art-widget">
+<h3>Что остаётся после налогов: сценарии продажи</h3>
+<canvas id="a10bar" height="220"></canvas>
+<script>
+(function(){
+  var ctx=document.getElementById('a10bar').getContext('2d');
+  var buy=29;
+  // через 2, 3, 5 лет
+  var prices=[{yr:2,price:33},{yr:3,price:36},{yr:5,price:40}];
+  var labels=prices.map(function(p){return 'Через '+p.yr+' лет'});
+  var gross=prices.map(function(p){return p.price});
+  var net=prices.map(function(p){
+    if(p.yr<5){var profit=p.price-buy;return+(p.price-profit*0.2).toFixed(1);}
+    return p.price;
+  });
+  var taxes=gross.map(function(g,i){return+(g-net[i]).toFixed(1);});
+  new Chart(ctx,{type:'bar',data:{labels:labels,datasets:[{label:'На руки',data:net,backgroundColor:'#C8920A'},{label:'НДФЛ',data:taxes,backgroundColor:'#E05A5A'}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{x:{stacked:true},y:{stacked:true,ticks:{callback:function(v){return v+' млн'}}}}}});
+})();
+</script>
+</div>
 <h2>Итоговая мысль</h2>
 <p>Статья 217.1 НК РФ — один из самых недооценённых инструментов инвестора в недвижимость. Большинство покупателей знают о ней. Меньшинство закладывают это в расчёты при покупке.</p>
 <p>Разница между «куплю и продам через 3 года, если надо» и «куплю с горизонтом 5 лет» — это от 500 тысяч до нескольких миллионов рублей конкретной экономии. Которая не требует никаких схем. Только терпения.</p>
 
-  
-<div style="display:flex;align-items:center;gap:16px;background:#F4F6F9;border-radius:14px;padding:20px 24px;margin:40px 0;">
-  <img src="/media/grigory.jpeg" alt="Григорий Куприн" loading="lazy"
-    style="width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:top center;flex-shrink:0;">
-  <div>
-    <div style="font-size:12px;color:#5E7389;font-weight:600;margin-bottom:4px;">Автор материала</div>
-    <div style="font-size:16px;font-weight:800;color:#1C2B3A;margin-bottom:6px;">Григорий Куприн</div>
-    <div style="font-size:13px;color:#3A4F65;margin-bottom:8px;">Владелец объекта Ольховская 45с1. Продаёт напрямую, без агентов.</div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="https://t.me/GrigoryKuprin" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#2AABEE;text-decoration:none;">✈️ Telegram</a>
-      <a href="https://vk.com/kupringrigory" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#0077FF;text-decoration:none;">VK</a>
-      <a href="https://max.ru/u/f9LHodD0cOIZCQ2tWZIr45eCUuEKm4Kqyqbih5kht8iCNAX4yll6XkoNpYg" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#FF4D00;text-decoration:none;">MAX</a>
-      <a href="https://olhovka45.ru" style="font-size:12px;font-weight:700;color:#C8920A;text-decoration:none;">olhovka45.ru</a>
-    </div>
-  </div>
-</div>
-
-<div class="art-cta">
+  <div class="art-cta">
     <div class="art-cta-text">
       <h3>Ольховская 45с1 — объект в продаже</h3>
       <p>93 м² · ЦАО · Хостел · 180 000 ₽/мес · 14,6% годовых · 0% налога после 5 лет</p>
@@ -218,38 +269,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     <a href="https://olhovka45.ru">Смотреть объект →</a>
   </div>
 
-  <div style="margin:40px 0;">
-<h2 style="font-size:22px;font-weight:900;color:#1C2B3A;margin-bottom:20px;">Вопросы и ответы</h2>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Нужно ли платить налог при продаже нежилой недвижимости?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    Для физических лиц: при владении 5 лет и более — налог 0% (ст. 217.1 НК РФ). При продаже раньше — НДФЛ 13% с разницы между ценой продажи и покупки.
-  </div>
-</details>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Распространяется ли льгота на нежилые объекты?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    Да. Статья 217.1 применяется к любой недвижимости, принадлежащей физлицу — жилой и нежилой. Пятилетний минимальный срок владения действует для обеих категорий.
-  </div>
-</details>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Что если я ИП — теряю ли льготу?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    Если ИП использует объект в предпринимательской деятельности и учитывает его в расходах — льгота не применяется, налог платится по ставке ИП. Для сохранения льготы объект должен быть в личной собственности физлица, не в деловом обороте ИП.
-  </div>
-</details>
-</div>
-
-<nav class="related" aria-label="Другие статьи">
+  <nav class="related" aria-label="Другие статьи">
     <h3>Читайте также</h3>
     <ul>
       <li><a href="/articles/article-01-kupit-kommercheskuyu/">Купить коммерческую недвижимость в Москве с арендатором: на что смотреть в 2026</a></li>
@@ -260,5 +280,8 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     </ul>
   </nav>
 </main>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

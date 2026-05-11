@@ -2,15 +2,6 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#1C2B3A">
-<meta name="msapplication-TileColor" content="#1C2B3A">
-<meta name="msapplication-TileImage" content="/favicon-192.png">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Хостел как арендатор: почему это надёжнее офиса, кафе и торговли</title>
 <meta name="description" content="Сравнение хостела с офисом, кафе и магазином по 6 параметрам: загрузка, текучка, риск съезда, вложения арендатора, зависимость от рынка, юридические риски.">
@@ -109,13 +100,36 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
   .related li a{font-size:14px}
   .site-header{padding:12px 16px}
 }
+
+
+.art-widget{background:#F4F6F9;border-radius:16px;padding:28px;margin:32px 0}
+.art-widget h3{font-size:16px;font-weight:800;color:#1C2B3A;margin-bottom:16px}
+.art-widget canvas{max-height:300px}
+.art-calc-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.art-calc-row label{font-size:13px;color:#5E7389;min-width:160px}
+.art-calc-row input[type=range]{flex:1;accent-color:#C8920A;min-width:120px}
+.art-calc-row .val{font-size:15px;font-weight:800;color:#1C2B3A;min-width:80px;text-align:right}
+.art-result{background:#1C2B3A;color:#fff;border-radius:12px;padding:16px 20px;margin-top:16px;font-size:15px;font-weight:700;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.art-result span{color:#C8920A;font-size:20px}
+.art-checklist{list-style:none;margin:0;padding:0}
+.art-checklist li{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:15px;line-height:1.5;color:#1A2738}
+.art-checklist input[type=checkbox]{accent-color:#C8920A;width:16px;height:16px;margin-top:3px;flex-shrink:0;cursor:pointer}
+.art-checklist label{cursor:pointer}
+.art-checklist input:checked+label{text-decoration:line-through;color:#5E7389}
+.art-timeline{position:relative;padding-left:24px;margin:0}
+.art-timeline::before{content:'';position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:#DDE3EC}
+.art-timeline li{position:relative;margin-bottom:16px;list-style:none}
+.art-timeline li::before{content:'';position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:#C8920A;border:2px solid #fff;box-shadow:0 0 0 2px #C8920A}
+.art-timeline .tl-year{font-size:12px;font-weight:800;color:#C8920A;text-transform:uppercase;letter-spacing:.5px}
+.art-timeline .tl-text{font-size:14px;color:#3A4F65;margin-top:2px}
+.art-quiz-q{font-size:15px;font-weight:700;color:#1C2B3A;margin-bottom:10px}
+.art-quiz-btns{display:flex;gap:10px;flex-wrap:wrap}
+.art-quiz-btns button{background:#fff;border:2px solid #DDE3EC;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:700;cursor:pointer;color:#1C2B3A;transition:all .2s}
+.art-quiz-btns button:hover,.art-quiz-btns button.active{background:#C8920A;border-color:#C8920A;color:#fff}
+.art-quiz-result{background:#1C2B3A;color:#fff;border-radius:12px;padding:16px 20px;margin-top:16px;font-size:15px;font-weight:700;display:none}
+.art-quiz-result.show{display:block}
+
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Чем хостел лучше офисного арендатора?',"acceptedAnswer":{"@type":"Answer","text":'Хостел у вокзала имеет структурный спрос, не зависящий от рынка труда. Офисы опустели в 2020 году и переезжают при любом ухудшении бизнеса. Хостел у трёх вокзалов работает при любой экономической ситуации.'}},
-{"@type":"Question","name":'Что будет если хостел съедет?',"acceptedAnswer":{"@type":"Answer","text":'В нежилом здании ЦАО у трёх вокзалов простой минимален — спрос на такие площади высокий. Плюс: арендатор вложил в ремонт под хостел собственные средства, уйти для него экономически невыгодно.'}},
-{"@type":"Question","name":'Распространяется ли закон Хованской на этот объект?',"acceptedAnswer":{"@type":"Answer","text":'Нет. Закон Хованской запрещает хостелы только в жилых многоквартирных домах. Ольховская 45с1 — нежилое административное здание. Статус полностью легальный.'}}]}
-</script>
-<style>details[open] summary span{transform:rotate(45deg)}details summary::-webkit-details-marker{display:none}</style>
 </head>
 <body>
 <header class="site-header">
@@ -160,6 +174,17 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <h3>Юридические риски: неожиданный плюс</h3>
 <p>У хостелов в нежилых зданиях нет проблемы «Закона Хованской». Это законодательство запрещает гостиничную деятельность в жилых помещениях. Нежилое здание — вне зоны этого ограничения.</p>
 <p>Кафе, наоборот, регулярно сталкиваются с проверками пожарных, санэпидемслужбы, Роспотребнадзора. Каждая проверка — потенциальный штраф, приостановление работы, стресс для арендатора и косвенный риск для собственника (арендатор может попросить скидку или уйти).</p>
+
+<div class="art-widget">
+<h3>Сравнение арендаторов по 6 параметрам</h3>
+<canvas id="a06radar" height="280"></canvas>
+<script>
+(function(){
+  var ctx=document.getElementById('a06radar').getContext('2d');
+  new Chart(ctx,{type:'radar',data:{labels:['Стабильность','Трафик','Вложения арендатора','Пассивность','Устойчивость к кризису','Доходность'],datasets:[{label:'Хостел у вокзала',data:[8,10,9,9,8,8],borderColor:'#C8920A',backgroundColor:'rgba(200,146,10,0.15)',pointBackgroundColor:'#C8920A'},{label:'Офис',data:[7,5,5,8,6,7],borderColor:'#2AABEE',backgroundColor:'rgba(42,171,238,0.1)',pointBackgroundColor:'#2AABEE'},{label:'Кафе/ресторан',data:[5,7,7,6,4,8],borderColor:'#1C2B3A',backgroundColor:'rgba(28,43,58,0.08)',pointBackgroundColor:'#1C2B3A'},{label:'Магазин',data:[6,6,6,7,5,7],borderColor:'#6B7F94',backgroundColor:'rgba(107,127,148,0.08)',pointBackgroundColor:'#6B7F94'}]},options:{responsive:true,scales:{r:{min:0,max:10,ticks:{stepSize:2,font:{size:10}},pointLabels:{font:{size:11}}}},plugins:{legend:{position:'bottom'}}}});
+})();
+</script>
+</div>
 <h2>Почему хостел у вокзала — особый случай</h2>
 <p>Хостел в случайном месте и хостел у трёх вокзалов — это принципиально разные инвестиции.</p>
 <p>Средняя загрузка хостелов в Москве — около 65–70%. Хостелы в зоне Комсомольской площади — 85–95%. Разница объясняется просто: у трёх вокзалов сконцентрирован постоянный, неиссякаемый поток людей, которым нужно где-то переночевать.</p>
@@ -180,32 +205,24 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <li>Договор: срок, индексация, расторжение, обеспечительный платёж</li>
 </ul>
 <p>На Ольховской, 45с1 все эти пункты в порядке: нежилое административное здание, действующий хостел, договор 5 лет с 10% индексацией, 180 000 ₽/мес.</p>
+
+<!-- art-widgets-v1 -->
+<div class="art-widget">
+<h3>Средняя загрузка по типам арендаторов (%)</h3>
+<canvas id="a06bar" height="200"></canvas>
+<script>
+(function(){
+  var ctx=document.getElementById('a06bar').getContext('2d');
+  new Chart(ctx,{type:'bar',data:{labels:['Хостел у вокзала','Хостел в спальнике','Офис класс A','Офис класс B','Кафе у метро','Магазин одежды'],datasets:[{label:'Средняя загрузка, %',data:[85,62,78,65,70,55],backgroundColor:['#C8920A','#E0A040','#2AABEE','#7CC8F0','#1C2B3A','#6B7F94']}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{min:0,max:100,ticks:{callback:function(v){return v+'%'}}}}}});
+})();
+</script>
+</div>
 <h2>Итоговая мысль</h2>
 <p>«Надёжность» арендатора — это не название компании и не её размер. Это привязанность к месту, устойчивость бизнес-модели и качество договора.</p>
 <p>По всем трём параметрам хостел у крупного транспортного узла в ЦАО Москвы конкурирует с федеральными ритейлерами и выигрывает у большинства кафе и стандартных офисных арендаторов.</p>
 <p>Просто об этом реже говорят.</p>
 
-  
-<div style="display:flex;align-items:center;gap:16px;background:#F4F6F9;border-radius:14px;padding:20px 24px;margin:40px 0;">
-  <img src="/media/grigory.jpeg" alt="Григорий Куприн" loading="lazy"
-    style="width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:top center;flex-shrink:0;">
-  <div>
-    <div style="font-size:12px;color:#5E7389;font-weight:600;margin-bottom:4px;">Автор материала</div>
-    <div style="font-size:16px;font-weight:800;color:#1C2B3A;margin-bottom:6px;">Григорий Куприн</div>
-    <div style="font-size:13px;color:#3A4F65;margin-bottom:8px;">Владелец объекта Ольховская 45с1. Продаёт напрямую, без агентов.</div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="https://t.me/GrigoryKuprin" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#2AABEE;text-decoration:none;">✈️ Telegram</a>
-      <a href="https://vk.com/kupringrigory" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#0077FF;text-decoration:none;">VK</a>
-      <a href="https://max.ru/u/f9LHodD0cOIZCQ2tWZIr45eCUuEKm4Kqyqbih5kht8iCNAX4yll6XkoNpYg" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#FF4D00;text-decoration:none;">MAX</a>
-      <a href="https://olhovka45.ru" style="font-size:12px;font-weight:700;color:#C8920A;text-decoration:none;">olhovka45.ru</a>
-    </div>
-  </div>
-</div>
-
-<div class="art-cta">
+  <div class="art-cta">
     <div class="art-cta-text">
       <h3>Ольховская 45с1 — объект в продаже</h3>
       <p>93 м² · ЦАО · Хостел · 180 000 ₽/мес · 14,6% годовых · 0% налога после 5 лет</p>
@@ -213,38 +230,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     <a href="https://olhovka45.ru">Смотреть объект →</a>
   </div>
 
-  <div style="margin:40px 0;">
-<h2 style="font-size:22px;font-weight:900;color:#1C2B3A;margin-bottom:20px;">Вопросы и ответы</h2>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Чем хостел лучше офисного арендатора?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    Хостел у вокзала имеет структурный спрос, не зависящий от рынка труда. Офисы опустели в 2020 году и переезжают при любом ухудшении бизнеса. Хостел у трёх вокзалов работает при любой экономической ситуации.
-  </div>
-</details>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Что будет если хостел съедет?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    В нежилом здании ЦАО у трёх вокзалов простой минимален — спрос на такие площади высокий. Плюс: арендатор вложил в ремонт под хостел собственные средства, уйти для него экономически невыгодно.
-  </div>
-</details>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Распространяется ли закон Хованской на этот объект?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    Нет. Закон Хованской запрещает хостелы только в жилых многоквартирных домах. Ольховская 45с1 — нежилое административное здание. Статус полностью легальный.
-  </div>
-</details>
-</div>
-
-<nav class="related" aria-label="Другие статьи">
+  <nav class="related" aria-label="Другие статьи">
     <h3>Читайте также</h3>
     <ul>
       <li><a href="/articles/article-07-zakon-hovanskoy/">Закон Хованской и хостелы в 2026: что важно знать покупателю помещения</a></li>
@@ -255,5 +241,8 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     </ul>
   </nav>
 </main>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

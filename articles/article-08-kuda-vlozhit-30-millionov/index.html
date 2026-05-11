@@ -2,15 +2,6 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#1C2B3A">
-<meta name="msapplication-TileColor" content="#1C2B3A">
-<meta name="msapplication-TileImage" content="/favicon-192.png">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Куда вложить 30 миллионов рублей в 2026: пять вариантов с расчётами</title>
 <meta name="description" content="Акции, депозит, золото, краудлендинг, коммерческая недвижимость: расчёт итогового капитала через 5 лет для каждого варианта. Цифры без воды.">
@@ -109,13 +100,36 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
   .related li a{font-size:14px}
   .site-header{padding:12px 16px}
 }
+
+
+.art-widget{background:#F4F6F9;border-radius:16px;padding:28px;margin:32px 0}
+.art-widget h3{font-size:16px;font-weight:800;color:#1C2B3A;margin-bottom:16px}
+.art-widget canvas{max-height:300px}
+.art-calc-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.art-calc-row label{font-size:13px;color:#5E7389;min-width:160px}
+.art-calc-row input[type=range]{flex:1;accent-color:#C8920A;min-width:120px}
+.art-calc-row .val{font-size:15px;font-weight:800;color:#1C2B3A;min-width:80px;text-align:right}
+.art-result{background:#1C2B3A;color:#fff;border-radius:12px;padding:16px 20px;margin-top:16px;font-size:15px;font-weight:700;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.art-result span{color:#C8920A;font-size:20px}
+.art-checklist{list-style:none;margin:0;padding:0}
+.art-checklist li{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:15px;line-height:1.5;color:#1A2738}
+.art-checklist input[type=checkbox]{accent-color:#C8920A;width:16px;height:16px;margin-top:3px;flex-shrink:0;cursor:pointer}
+.art-checklist label{cursor:pointer}
+.art-checklist input:checked+label{text-decoration:line-through;color:#5E7389}
+.art-timeline{position:relative;padding-left:24px;margin:0}
+.art-timeline::before{content:'';position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:#DDE3EC}
+.art-timeline li{position:relative;margin-bottom:16px;list-style:none}
+.art-timeline li::before{content:'';position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:#C8920A;border:2px solid #fff;box-shadow:0 0 0 2px #C8920A}
+.art-timeline .tl-year{font-size:12px;font-weight:800;color:#C8920A;text-transform:uppercase;letter-spacing:.5px}
+.art-timeline .tl-text{font-size:14px;color:#3A4F65;margin-top:2px}
+.art-quiz-q{font-size:15px;font-weight:700;color:#1C2B3A;margin-bottom:10px}
+.art-quiz-btns{display:flex;gap:10px;flex-wrap:wrap}
+.art-quiz-btns button{background:#fff;border:2px solid #DDE3EC;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:700;cursor:pointer;color:#1C2B3A;transition:all .2s}
+.art-quiz-btns button:hover,.art-quiz-btns button.active{background:#C8920A;border-color:#C8920A;color:#fff}
+.art-quiz-result{background:#1C2B3A;color:#fff;border-radius:12px;padding:16px 20px;margin-top:16px;font-size:15px;font-weight:700;display:none}
+.art-quiz-result.show{display:block}
+
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Куда выгоднее всего вложить 30 миллионов рублей в 2026?',"acceptedAnswer":{"@type":"Answer","text":'При горизонте 5 лет и умеренном риске — коммерческая недвижимость с арендатором показывает лучшее соотношение доходность/риск. Акции дают выше, но с высокой волатильностью. Депозит — безопасно, но ставка будет снижаться.'}},
-{"@type":"Question","name":'Стоит ли вкладывать в акции вместо недвижимости?',"acceptedAnswer":{"@type":"Answer","text":'Акции на горизонте 5 лет исторически дают 15–20%/год, но с просадками до -40%. Недвижимость в ЦАО даёт стабильные 14,6% без резких просадок и с физическим активом в собственности.'}},
-{"@type":"Question","name":'Что такое краудлендинг и насколько он надёжен?',"acceptedAnswer":{"@type":"Answer","text":'Краудлендинг — кредитование бизнеса через платформы (Поток, JetLend). Ставки 18–25%, но дефолтность 5–15% в год. После вычета дефолтов реальная доходность ниже 15%. Подходит как часть портфеля, не как основной инструмент.'}}]}
-</script>
-<style>details[open] summary span{transform:rotate(45deg)}details summary::-webkit-details-marker{display:none}</style>
 </head>
 <body>
 <header class="site-header">
@@ -201,6 +215,44 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 </tbody></table></div>
 <p><strong>Плюсы:</strong> стабильный денежный поток, рост актива, нулевой налог при выходе через 5+ лет.</p>
 <p><strong>Минусы:</strong> низкая ликвидность, зависимость от арендатора, операционные заботы.</p>
+
+<div class="art-widget">
+<h3>Калькулятор: итог через 5 лет по инструментам</h3>
+<div class="art-calc-row">
+  <label>Сумма инвестиций (млн ₽)</label>
+  <input type="range" id="a08sum" min="5" max="100" step="1" value="30" oninput="calcA08()">
+  <div class="val" id="a08sumV">30 млн ₽</div>
+</div>
+<canvas id="a08line" height="220"></canvas>
+<script>
+(function(){
+  var ctx=document.getElementById('a08line').getContext('2d');
+  var ch=new Chart(ctx,{type:'line',data:{labels:['Год 0','Год 1','Год 2','Год 3','Год 4','Год 5'],datasets:[
+    {label:'КН (14.6%+рост актива)',data:[],borderColor:'#C8920A',tension:0.3,pointBackgroundColor:'#C8920A'},
+    {label:'Депозит (12.5%)',data:[],borderColor:'#2AABEE',tension:0.3,pointBackgroundColor:'#2AABEE'},
+    {label:'ОФЗ (11%)',data:[],borderColor:'#1C2B3A',tension:0.3,pointBackgroundColor:'#1C2B3A'},
+    {label:'Акции (15% в год)',data:[],borderColor:'#6B7F94',tension:0.3,pointBackgroundColor:'#6B7F94'},
+    {label:'Наличные',data:[],borderColor:'#E0E6EF',tension:0.3,pointBackgroundColor:'#E0E6EF'}
+  ]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:function(v){return(v/1000000).toFixed(0)+'М'}}}}}});
+  window.calcA08=function(){
+    var s=parseInt(document.getElementById('a08sum').value)*1000000;
+    document.getElementById('a08sumV').textContent=parseInt(document.getElementById('a08sum').value)+' млн ₽';
+    var sets=[
+      function(i){return Math.round(s*(1+(0.146+0.05)*i));},
+      function(i){return Math.round(s*Math.pow(1.125,i));},
+      function(i){return Math.round(s*Math.pow(1.11,i));},
+      function(i){return Math.round(s*Math.pow(1.15,i));},
+      function(i){return Math.round(s*Math.pow(0.93,i));}
+    ];
+    sets.forEach(function(fn,di){
+      ch.data.datasets[di].data=[0,1,2,3,4,5].map(fn);
+    });
+    ch.update();
+  };
+  calcA08();
+})();
+</script>
+</div>
 <h2>Итоговое сравнение</h2>
 <div class="art-table-wrap"><table class="art-table">
 <thead><tr><th>Инструмент</th><th>Капитал через 5 лет</th><th>Среднегод. доходность</th><th>Риск</th><th>Ликвидность</th></tr></thead><tbody>
@@ -210,6 +262,25 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <tr><td>Краудлендинг</td><td>~52 000 000</td><td>~12,4%</td><td>Средний</td><td>Низкая</td></tr>
 <tr><td>Недвижимость ЦАО</td><td>~55 237 000</td><td>~14,6%</td><td>Средний</td><td>Низкая</td></tr>
 </tbody></table></div>
+
+<!-- art-widgets-v1 -->
+<div class="art-widget">
+<h3>Структура капитала через 5 лет: КН vs депозит</h3>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center">
+<div style="flex:1;min-width:140px"><canvas id="a08d1" height="200"></canvas><p style="text-align:center;font-size:13px;color:#5E7389;margin-top:8px">КН 30 млн → 57.9 млн</p></div>
+<div style="flex:1;min-width:140px"><canvas id="a08d2" height="200"></canvas><p style="text-align:center;font-size:13px;color:#5E7389;margin-top:8px">Депозит 30 млн → 54.3 млн</p></div>
+</div>
+<script>
+(function(){
+  var s=30;
+  var re_income=Math.round(s*0.146*5);
+  var re_growth=Math.round(s*0.27);
+  var dep_income=Math.round(s*(Math.pow(1.125,5)-1));
+  new Chart(document.getElementById('a08d1').getContext('2d'),{type:'doughnut',data:{labels:['Начальный капитал','Арендный доход','Рост актива'],datasets:[{data:[s,re_income,re_growth],backgroundColor:['#E0E6EF','#C8920A','#1C2B3A']}]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:11}}}}}});
+  new Chart(document.getElementById('a08d2').getContext('2d'),{type:'doughnut',data:{labels:['Начальный капитал','Проценты'],datasets:[{data:[s,dep_income],backgroundColor:['#E0E6EF','#2AABEE']}]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:11}}}}}});
+})();
+</script>
+</div>
 <h2>Что выбирает разумный инвестор</h2>
 <p>Чистое сравнение по итоговому капиталу через 5 лет — не лучший критерий. Важнее предсказуемость.</p>
 <p>Акции могут дать 60 млн — или 33 млн. Это слишком широкий диапазон для крупной суммы. Золото ещё непредсказуемее в краткосрочной перспективе.</p>
@@ -218,27 +289,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <p>Для тех, кто готов к волатильности в обмен на потенциально высокий возврат, — акции остаются интересными. Но психологически выдержать −40% при сумме 30 млн — это другой уровень стойкости.</p>
 <p>Хочется задать один вопрос: вы точно сможете не продать, когда IMOEX снова потеряет 40%?</p>
 
-  
-<div style="display:flex;align-items:center;gap:16px;background:#F4F6F9;border-radius:14px;padding:20px 24px;margin:40px 0;">
-  <img src="/media/grigory.jpeg" alt="Григорий Куприн" loading="lazy"
-    style="width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:top center;flex-shrink:0;">
-  <div>
-    <div style="font-size:12px;color:#5E7389;font-weight:600;margin-bottom:4px;">Автор материала</div>
-    <div style="font-size:16px;font-weight:800;color:#1C2B3A;margin-bottom:6px;">Григорий Куприн</div>
-    <div style="font-size:13px;color:#3A4F65;margin-bottom:8px;">Владелец объекта Ольховская 45с1. Продаёт напрямую, без агентов.</div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="https://t.me/GrigoryKuprin" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#2AABEE;text-decoration:none;">✈️ Telegram</a>
-      <a href="https://vk.com/kupringrigory" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#0077FF;text-decoration:none;">VK</a>
-      <a href="https://max.ru/u/f9LHodD0cOIZCQ2tWZIr45eCUuEKm4Kqyqbih5kht8iCNAX4yll6XkoNpYg" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#FF4D00;text-decoration:none;">MAX</a>
-      <a href="https://olhovka45.ru" style="font-size:12px;font-weight:700;color:#C8920A;text-decoration:none;">olhovka45.ru</a>
-    </div>
-  </div>
-</div>
-
-<div class="art-cta">
+  <div class="art-cta">
     <div class="art-cta-text">
       <h3>Ольховская 45с1 — объект в продаже</h3>
       <p>93 м² · ЦАО · Хостел · 180 000 ₽/мес · 14,6% годовых · 0% налога после 5 лет</p>
@@ -246,38 +297,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     <a href="https://olhovka45.ru">Смотреть объект →</a>
   </div>
 
-  <div style="margin:40px 0;">
-<h2 style="font-size:22px;font-weight:900;color:#1C2B3A;margin-bottom:20px;">Вопросы и ответы</h2>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Куда выгоднее всего вложить 30 миллионов рублей в 2026?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    При горизонте 5 лет и умеренном риске — коммерческая недвижимость с арендатором показывает лучшее соотношение доходность/риск. Акции дают выше, но с высокой волатильностью. Депозит — безопасно, но ставка будет снижаться.
-  </div>
-</details>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Стоит ли вкладывать в акции вместо недвижимости?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    Акции на горизонте 5 лет исторически дают 15–20%/год, но с просадками до -40%. Недвижимость в ЦАО даёт стабильные 14,6% без резких просадок и с физическим активом в собственности.
-  </div>
-</details>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Что такое краудлендинг и насколько он надёжен?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    Краудлендинг — кредитование бизнеса через платформы (Поток, JetLend). Ставки 18–25%, но дефолтность 5–15% в год. После вычета дефолтов реальная доходность ниже 15%. Подходит как часть портфеля, не как основной инструмент.
-  </div>
-</details>
-</div>
-
-<nav class="related" aria-label="Другие статьи">
+  <nav class="related" aria-label="Другие статьи">
     <h3>Читайте также</h3>
     <ul>
       <li><a href="/articles/article-04-nedvizhimost-ili-depozit/">Недвижимость или депозит: куда вложить 29 миллионов в 2026</a></li>
@@ -288,5 +308,8 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     </ul>
   </nav>
 </main>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

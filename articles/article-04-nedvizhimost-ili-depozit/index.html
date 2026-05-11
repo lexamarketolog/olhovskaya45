@@ -2,15 +2,6 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#1C2B3A">
-<meta name="msapplication-TileColor" content="#1C2B3A">
-<meta name="msapplication-TileImage" content="/favicon-192.png">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Недвижимость или депозит: куда вложить 29 миллионов в 2026</title>
 <meta name="description" content="Депозит 12,5% против аренды 14,6%: детальный расчёт на 5 лет с учётом снижения КС, инфляции и налогового эффекта. Где реально больше денег через 5 лет?">
@@ -109,13 +100,36 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
   .related li a{font-size:14px}
   .site-header{padding:12px 16px}
 }
+
+
+.art-widget{background:#F4F6F9;border-radius:16px;padding:28px;margin:32px 0}
+.art-widget h3{font-size:16px;font-weight:800;color:#1C2B3A;margin-bottom:16px}
+.art-widget canvas{max-height:300px}
+.art-calc-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.art-calc-row label{font-size:13px;color:#5E7389;min-width:160px}
+.art-calc-row input[type=range]{flex:1;accent-color:#C8920A;min-width:120px}
+.art-calc-row .val{font-size:15px;font-weight:800;color:#1C2B3A;min-width:80px;text-align:right}
+.art-result{background:#1C2B3A;color:#fff;border-radius:12px;padding:16px 20px;margin-top:16px;font-size:15px;font-weight:700;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.art-result span{color:#C8920A;font-size:20px}
+.art-checklist{list-style:none;margin:0;padding:0}
+.art-checklist li{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:15px;line-height:1.5;color:#1A2738}
+.art-checklist input[type=checkbox]{accent-color:#C8920A;width:16px;height:16px;margin-top:3px;flex-shrink:0;cursor:pointer}
+.art-checklist label{cursor:pointer}
+.art-checklist input:checked+label{text-decoration:line-through;color:#5E7389}
+.art-timeline{position:relative;padding-left:24px;margin:0}
+.art-timeline::before{content:'';position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:#DDE3EC}
+.art-timeline li{position:relative;margin-bottom:16px;list-style:none}
+.art-timeline li::before{content:'';position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:#C8920A;border:2px solid #fff;box-shadow:0 0 0 2px #C8920A}
+.art-timeline .tl-year{font-size:12px;font-weight:800;color:#C8920A;text-transform:uppercase;letter-spacing:.5px}
+.art-timeline .tl-text{font-size:14px;color:#3A4F65;margin-top:2px}
+.art-quiz-q{font-size:15px;font-weight:700;color:#1C2B3A;margin-bottom:10px}
+.art-quiz-btns{display:flex;gap:10px;flex-wrap:wrap}
+.art-quiz-btns button{background:#fff;border:2px solid #DDE3EC;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:700;cursor:pointer;color:#1C2B3A;transition:all .2s}
+.art-quiz-btns button:hover,.art-quiz-btns button.active{background:#C8920A;border-color:#C8920A;color:#fff}
+.art-quiz-result{background:#1C2B3A;color:#fff;border-radius:12px;padding:16px 20px;margin-top:16px;font-size:15px;font-weight:700;display:none}
+.art-quiz-result.show{display:block}
+
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Что выгоднее — депозит или недвижимость?',"acceptedAnswer":{"@type":"Answer","text":'На горизонте 5 лет при текущих ставках — недвижимость с хорошим арендатором. Депозит даёт 12,5% при КС 14,5%, но ставка будет снижаться. Объект на Ольховской 45с1 даёт 14,6% среднегодовых плюс рост актива плюс нулевой налог при продаже.'}},
-{"@type":"Question","name":'Что будет с доходностью депозита если ЦБ снизит ставку?',"acceptedAnswer":{"@type":"Answer","text":'При снижении КС до 10% доходность нового депозита упадёт до ~8–9%. Объект с зафиксированной индексацией 10%/год продолжит расти независимо от решений ЦБ.'}},
-{"@type":"Question","name":'Как учитывать налоги при сравнении?',"acceptedAnswer":{"@type":"Answer","text":'Доход с депозита облагается НДФЛ по прогрессивной ставке. При продаже недвижимости после 5 лет владения — налог 0% (ст. 217.1 НК РФ). На горизонте 5 лет это экономия 1,5–2 млн рублей.'}}]}
-</script>
-<style>details[open] summary span{transform:rotate(45deg)}details summary::-webkit-details-marker{display:none}</style>
 </head>
 <body>
 <header class="site-header">
@@ -134,6 +148,36 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <p>Сумма: 29 000 000 рублей. Горизонт: 5 лет. Два варианта — депозит в топ-банке и коммерческая недвижимость в ЦАО с арендатором.</p>
 <p><strong>Депозит:</strong> ставка 12,5% в 2026, с расчётом снижения до 10% к 2027, 8,5% к 2028, 8% к 2029–2030 (согласно прогнозу ЦБ и рыночным ожиданиям). Реинвестирование процентов каждый год.</p>
 <p><strong>Недвижимость:</strong> объект 93 м² на Ольховской 45с1, аренда 180 000 ₽/мес, индексация 10%/год, прирост стоимости ~8 млн за 5 лет (исторический темп для ЦАО ~5,5% в год).</p>
+
+<div class="art-widget">
+<h3>Калькулятор: недвижимость vs депозит за 5 лет</h3>
+<div class="art-calc-row">
+  <label>Сумма инвестиций (млн ₽)</label>
+  <input type="range" id="a04sum" min="5" max="100" step="1" value="29" oninput="calcA04()">
+  <div class="val" id="a04sumV">29 млн ₽</div>
+</div>
+<canvas id="a04line" height="200"></canvas>
+<div class="art-result">
+  <div>Депозит 12.5% за 5 лет: <span id="a04dep">—</span></div>
+  <div>Недвижимость 14.6% за 5 лет: <span id="a04re">—</span></div>
+</div>
+<script>
+(function(){
+  var ctx=document.getElementById('a04line').getContext('2d');
+  var ch=new Chart(ctx,{type:'line',data:{labels:['Год 0','Год 1','Год 2','Год 3','Год 4','Год 5'],datasets:[{label:'Депозит 12.5%',data:[],borderColor:'#2AABEE',tension:0.3,pointBackgroundColor:'#2AABEE'},{label:'Недвижимость 14.6%',data:[],borderColor:'#C8920A',tension:0.3,pointBackgroundColor:'#C8920A'}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:function(v){return(v/1000000).toFixed(1)+'М'}}}}}});
+  window.calcA04=function(){
+    var s=parseInt(document.getElementById('a04sum').value)*1000000;
+    document.getElementById('a04sumV').textContent=parseInt(document.getElementById('a04sum').value)+' млн ₽';
+    var dep=[s],re=[s];
+    for(var i=1;i<=5;i++){dep.push(Math.round(s*Math.pow(1.125,i)));re.push(Math.round(s*(1+0.146*i)));}
+    ch.data.datasets[0].data=dep;ch.data.datasets[1].data=re;ch.update();
+    document.getElementById('a04dep').textContent=(dep[5]/1000000).toFixed(2)+' млн ₽';
+    document.getElementById('a04re').textContent=(re[5]/1000000).toFixed(2)+' млн ₽';
+  };
+  calcA04();
+})();
+</script>
+</div>
 <h2>Расчёт по депозиту</h2>
 <p>При последовательном снижении ставки реинвестирование работает всё хуже:</p>
 <div class="art-table-wrap"><table class="art-table">
@@ -188,6 +232,19 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <p><strong>Базовый:</strong> расчёты выше. Итог: ~50 млн vs ~44 млн.</p>
 <p><strong>Пессимистичный:</strong> арендатор ушёл на год 3-го года, простой 4 месяца, прирост объекта 3% в год. Итог: ~46 млн vs ~44 млн. Разница всего 2 млн — не так впечатляет.</p>
 <p>Пессимистичный сценарий депозита: ЦБ держит ставку высокой, но вводит дополнительные ограничения или налоги на доходы с капитала (обсуждалось в 2024). Тогда депозит теряет часть преимущества.</p>
+
+<!-- art-widgets-v1 -->
+<div class="art-widget">
+<h3>Из чего складывается доход за 5 лет</h3>
+<canvas id="a04stacked" height="220"></canvas>
+<script>
+(function(){
+  var ctx=document.getElementById('a04stacked').getContext('2d');
+  var s=29000000;
+  new Chart(ctx,{type:'bar',data:{labels:['Депозит','Недвижимость'],datasets:[{label:'Начальный капитал',data:[s,s],backgroundColor:'#E0E6EF'},{label:'Доход / прирост',data:[Math.round(s*(Math.pow(1.125,5)-1)),Math.round(s*0.146*5+s*0.27)],backgroundColor:['#2AABEE','#C8920A']}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{x:{stacked:true},y:{stacked:true,ticks:{callback:function(v){return(v/1000000).toFixed(0)+'М'}}}}}});
+})();
+</script>
+</div>
 <h2>Кому что подходит</h2>
 <p>Депозит выигрывает, если:</p>
 <ul>
@@ -206,27 +263,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <p>Для большинства инвесторов с горизонтом 5 лет и суммой от 20 млн — недвижимость в ЦАО с сильным арендатором и длинным договором выигрывает у депозита на ~40% в абсолютных числах.</p>
 <p>6 миллионов разницы — это не абстракция. Это ещё одна хорошая машина, или первый взнос на следующий объект.</p>
 
-  
-<div style="display:flex;align-items:center;gap:16px;background:#F4F6F9;border-radius:14px;padding:20px 24px;margin:40px 0;">
-  <img src="/media/grigory.jpeg" alt="Григорий Куприн" loading="lazy"
-    style="width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:top center;flex-shrink:0;">
-  <div>
-    <div style="font-size:12px;color:#5E7389;font-weight:600;margin-bottom:4px;">Автор материала</div>
-    <div style="font-size:16px;font-weight:800;color:#1C2B3A;margin-bottom:6px;">Григорий Куприн</div>
-    <div style="font-size:13px;color:#3A4F65;margin-bottom:8px;">Владелец объекта Ольховская 45с1. Продаёт напрямую, без агентов.</div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="https://t.me/GrigoryKuprin" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#2AABEE;text-decoration:none;">✈️ Telegram</a>
-      <a href="https://vk.com/kupringrigory" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#0077FF;text-decoration:none;">VK</a>
-      <a href="https://max.ru/u/f9LHodD0cOIZCQ2tWZIr45eCUuEKm4Kqyqbih5kht8iCNAX4yll6XkoNpYg" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#FF4D00;text-decoration:none;">MAX</a>
-      <a href="https://olhovka45.ru" style="font-size:12px;font-weight:700;color:#C8920A;text-decoration:none;">olhovka45.ru</a>
-    </div>
-  </div>
-</div>
-
-<div class="art-cta">
+  <div class="art-cta">
     <div class="art-cta-text">
       <h3>Ольховская 45с1 — объект в продаже</h3>
       <p>93 м² · ЦАО · Хостел · 180 000 ₽/мес · 14,6% годовых · 0% налога после 5 лет</p>
@@ -234,38 +271,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     <a href="https://olhovka45.ru">Смотреть объект →</a>
   </div>
 
-  <div style="margin:40px 0;">
-<h2 style="font-size:22px;font-weight:900;color:#1C2B3A;margin-bottom:20px;">Вопросы и ответы</h2>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Что выгоднее — депозит или недвижимость?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    На горизонте 5 лет при текущих ставках — недвижимость с хорошим арендатором. Депозит даёт 12,5% при КС 14,5%, но ставка будет снижаться. Объект на Ольховской 45с1 даёт 14,6% среднегодовых плюс рост актива плюс нулевой налог при продаже.
-  </div>
-</details>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Что будет с доходностью депозита если ЦБ снизит ставку?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    При снижении КС до 10% доходность нового депозита упадёт до ~8–9%. Объект с зафиксированной индексацией 10%/год продолжит расти независимо от решений ЦБ.
-  </div>
-</details>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Как учитывать налоги при сравнении?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    Доход с депозита облагается НДФЛ по прогрессивной ставке. При продаже недвижимости после 5 лет владения — налог 0% (ст. 217.1 НК РФ). На горизонте 5 лет это экономия 1,5–2 млн рублей.
-  </div>
-</details>
-</div>
-
-<nav class="related" aria-label="Другие статьи">
+  <nav class="related" aria-label="Другие статьи">
     <h3>Читайте также</h3>
     <ul>
       <li><a href="/articles/article-03-dokhodnost-kommercheskoy/">Доходность коммерческой недвижимости в Москве: реальные цифры 2026</a></li>
@@ -276,5 +282,8 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     </ul>
   </nav>
 </main>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

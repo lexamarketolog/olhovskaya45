@@ -2,15 +2,6 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#1C2B3A">
-<meta name="msapplication-TileColor" content="#1C2B3A">
-<meta name="msapplication-TileImage" content="/favicon-192.png">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ЦАО против других округов: где коммерческая недвижимость приносит больше</title>
 <meta name="description" content="Сравнение ЦАО, СВАО, ЮАО и СЗАО: цена метра, доходность, ликвидность и вакантность. Почему дорогой вход в ЦАО оправдан на горизонте 5 лет.">
@@ -109,13 +100,36 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
   .related li a{font-size:14px}
   .site-header{padding:12px 16px}
 }
+
+
+.art-widget{background:#F4F6F9;border-radius:16px;padding:28px;margin:32px 0}
+.art-widget h3{font-size:16px;font-weight:800;color:#1C2B3A;margin-bottom:16px}
+.art-widget canvas{max-height:300px}
+.art-calc-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.art-calc-row label{font-size:13px;color:#5E7389;min-width:160px}
+.art-calc-row input[type=range]{flex:1;accent-color:#C8920A;min-width:120px}
+.art-calc-row .val{font-size:15px;font-weight:800;color:#1C2B3A;min-width:80px;text-align:right}
+.art-result{background:#1C2B3A;color:#fff;border-radius:12px;padding:16px 20px;margin-top:16px;font-size:15px;font-weight:700;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.art-result span{color:#C8920A;font-size:20px}
+.art-checklist{list-style:none;margin:0;padding:0}
+.art-checklist li{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:15px;line-height:1.5;color:#1A2738}
+.art-checklist input[type=checkbox]{accent-color:#C8920A;width:16px;height:16px;margin-top:3px;flex-shrink:0;cursor:pointer}
+.art-checklist label{cursor:pointer}
+.art-checklist input:checked+label{text-decoration:line-through;color:#5E7389}
+.art-timeline{position:relative;padding-left:24px;margin:0}
+.art-timeline::before{content:'';position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:#DDE3EC}
+.art-timeline li{position:relative;margin-bottom:16px;list-style:none}
+.art-timeline li::before{content:'';position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:#C8920A;border:2px solid #fff;box-shadow:0 0 0 2px #C8920A}
+.art-timeline .tl-year{font-size:12px;font-weight:800;color:#C8920A;text-transform:uppercase;letter-spacing:.5px}
+.art-timeline .tl-text{font-size:14px;color:#3A4F65;margin-top:2px}
+.art-quiz-q{font-size:15px;font-weight:700;color:#1C2B3A;margin-bottom:10px}
+.art-quiz-btns{display:flex;gap:10px;flex-wrap:wrap}
+.art-quiz-btns button{background:#fff;border:2px solid #DDE3EC;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:700;cursor:pointer;color:#1C2B3A;transition:all .2s}
+.art-quiz-btns button:hover,.art-quiz-btns button.active{background:#C8920A;border-color:#C8920A;color:#fff}
+.art-quiz-result{background:#1C2B3A;color:#fff;border-radius:12px;padding:16px 20px;margin-top:16px;font-size:15px;font-weight:700;display:none}
+.art-quiz-result.show{display:block}
+
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Почему ЦАО лучше для инвестиций чем другие округа?',"acceptedAnswer":{"@type":"Answer","text":'ЦАО сочетает структурный трафик (вокзалы, деловой центр), ограниченное предложение площадей и высокую ликвидность. Объект в ЦАО можно продать быстрее и дороже, чем в спальном районе.'}},
-{"@type":"Question","name":'Насколько дороже недвижимость в ЦАО?',"acceptedAnswer":{"@type":"Answer","text":'Стоимость метра в ЦАО — 300–500 тыс. ₽ vs 150–220 тыс. в СВАО или ЮАО. Но и доходность выше (12–15% vs 7–9%), и ликвидность несравнимо лучше. При одинаковом бюджете ЦАО выигрывает на горизонте 5+ лет.'}},
-{"@type":"Question","name":'Есть ли смысл покупать КН за МКАД?',"acceptedAnswer":{"@type":"Answer","text":'Для пассивного дохода — риски выше: больше вакантность, меньше трафик, сложнее перепродать. За МКАД оправданы только объекты с якорным арендатором (сетевой ретейл, логистика) и долгосрочными договорами.'}}]}
-</script>
-<style>details[open] summary span{transform:rotate(45deg)}details summary::-webkit-details-marker{display:none}</style>
 </head>
 <body>
 <header class="site-header">
@@ -144,6 +158,17 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <tr><td>Ликвидность при выходе</td><td>Очень высокая</td><td>Средняя</td><td>Низкая</td><td>Средняя</td></tr>
 </tbody></table></div>
 <p>Цифры — средние по рынку 2025–2026. Диапазоны широкие, потому что внутри каждого округа есть «хорошие» и «плохие» локации.</p>
+
+<div class="art-widget">
+<h3>Стоимость м² коммерческой недвижимости по округам Москвы</h3>
+<canvas id="a05hbar" height="220"></canvas>
+<script>
+(function(){
+  var ctx=document.getElementById('a05hbar').getContext('2d');
+  new Chart(ctx,{type:'bar',data:{labels:['ЦАО','ЗАО','СЗАО','СВАО','ЮАО'],datasets:[{label:'Цена, ₽/м²',data:[312000,210000,175000,155000,140000],backgroundColor:['#C8920A','#2AABEE','#2AABEE','#2AABEE','#2AABEE']}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{callback:function(v){return(v/1000)+'к'}}}}}});
+})();
+</script>
+</div>
 <h2>Почему ЦАО выигрывает на горизонте</h2>
 <h3>Аргумент первый: вакантность 3–5% против 12–18%</h3>
 <p>В ЮАО каждое восьмое помещение пустует. В ЦАО — каждое двадцатое. Это значит, что при смене арендатора в ЮАО нормой является 4–8 месяцев поиска. В ЦАО — 1–2 месяца.</p>
@@ -183,6 +208,19 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <p>Если инвестор планирует активно управлять объектом, менять арендаторов, делать ремонт и перепрофилировать — ЦАО даёт меньше «пространства для манёвра» при тех же деньгах.</p>
 <p>Если горизонт 2–3 года — разница в приросте стоимости не успевает реализоваться, и cap rate первого года важнее.</p>
 <p>Но для пассивного инвестора с горизонтом 5+ лет и бюджетом 25–35 млн — ЦАО в правильной локации выигрывает у периферии по совокупности факторов почти всегда.</p>
+
+<!-- art-widgets-v1 -->
+<div class="art-widget">
+<h3>Цена метра vs доходность по округам</h3>
+<canvas id="a05scatter" height="220"></canvas>
+<script>
+(function(){
+  var ctx=document.getElementById('a05scatter').getContext('2d');
+  var data=[{x:312,y:13.5,label:'ЦАО'},{x:210,y:10,label:'ЗАО'},{x:175,y:8,label:'СЗАО'},{x:155,y:9,label:'СВАО'},{x:140,y:8,label:'ЮАО'}];
+  new Chart(ctx,{type:'scatter',data:{datasets:[{label:'Округа',data:data.map(function(d){return{x:d.x,y:d.y}}),backgroundColor:'#C8920A',pointRadius:8}]},options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){var d=data[ctx.dataIndex];return d.label+': '+d.x+'к ₽/м², '+d.y+'%'}}}},scales:{x:{title:{display:true,text:'Цена, тыс. ₽/м²'}},y:{title:{display:true,text:'Доходность, %'},min:5,max:18}}}});
+})();
+</script>
+</div>
 <h2>Что в итоге стоит учитывать при выборе округа</h2>
 <p>Не только cap rate. Ещё три вещи:</p>
 <p><strong>Реальная вакантность</strong> в конкретном субрайоне — не средняя по округу, а по ближайшим кварталам.</p>
@@ -190,27 +228,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <p><strong>Глубина рынка</strong> — сколько покупателей на объект такого класса в этом районе. Это определяет цену выхода через 5 лет.</p>
 <p>Цена входа в ЦАО выше. Но и качество игры — другое.</p>
 
-  
-<div style="display:flex;align-items:center;gap:16px;background:#F4F6F9;border-radius:14px;padding:20px 24px;margin:40px 0;">
-  <img src="/media/grigory.jpeg" alt="Григорий Куприн" loading="lazy"
-    style="width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:top center;flex-shrink:0;">
-  <div>
-    <div style="font-size:12px;color:#5E7389;font-weight:600;margin-bottom:4px;">Автор материала</div>
-    <div style="font-size:16px;font-weight:800;color:#1C2B3A;margin-bottom:6px;">Григорий Куприн</div>
-    <div style="font-size:13px;color:#3A4F65;margin-bottom:8px;">Владелец объекта Ольховская 45с1. Продаёт напрямую, без агентов.</div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="https://t.me/GrigoryKuprin" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#2AABEE;text-decoration:none;">✈️ Telegram</a>
-      <a href="https://vk.com/kupringrigory" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#0077FF;text-decoration:none;">VK</a>
-      <a href="https://max.ru/u/f9LHodD0cOIZCQ2tWZIr45eCUuEKm4Kqyqbih5kht8iCNAX4yll6XkoNpYg" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#FF4D00;text-decoration:none;">MAX</a>
-      <a href="https://olhovka45.ru" style="font-size:12px;font-weight:700;color:#C8920A;text-decoration:none;">olhovka45.ru</a>
-    </div>
-  </div>
-</div>
-
-<div class="art-cta">
+  <div class="art-cta">
     <div class="art-cta-text">
       <h3>Ольховская 45с1 — объект в продаже</h3>
       <p>93 м² · ЦАО · Хостел · 180 000 ₽/мес · 14,6% годовых · 0% налога после 5 лет</p>
@@ -218,38 +236,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     <a href="https://olhovka45.ru">Смотреть объект →</a>
   </div>
 
-  <div style="margin:40px 0;">
-<h2 style="font-size:22px;font-weight:900;color:#1C2B3A;margin-bottom:20px;">Вопросы и ответы</h2>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Почему ЦАО лучше для инвестиций чем другие округа?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    ЦАО сочетает структурный трафик (вокзалы, деловой центр), ограниченное предложение площадей и высокую ликвидность. Объект в ЦАО можно продать быстрее и дороже, чем в спальном районе.
-  </div>
-</details>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Насколько дороже недвижимость в ЦАО?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    Стоимость метра в ЦАО — 300–500 тыс. ₽ vs 150–220 тыс. в СВАО или ЮАО. Но и доходность выше (12–15% vs 7–9%), и ликвидность несравнимо лучше. При одинаковом бюджете ЦАО выигрывает на горизонте 5+ лет.
-  </div>
-</details>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Есть ли смысл покупать КН за МКАД?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    Для пассивного дохода — риски выше: больше вакантность, меньше трафик, сложнее перепродать. За МКАД оправданы только объекты с якорным арендатором (сетевой ретейл, логистика) и долгосрочными договорами.
-  </div>
-</details>
-</div>
-
-<nav class="related" aria-label="Другие статьи">
+  <nav class="related" aria-label="Другие статьи">
     <h3>Читайте также</h3>
     <ul>
       <li><a href="/articles/article-03-dokhodnost-kommercheskoy/">Доходность коммерческой недвижимости в Москве: реальные цифры 2026</a></li>
@@ -260,5 +247,8 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     </ul>
   </nav>
 </main>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

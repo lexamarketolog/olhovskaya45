@@ -2,15 +2,6 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#1C2B3A">
-<meta name="msapplication-TileColor" content="#1C2B3A">
-<meta name="msapplication-TileImage" content="/favicon-192.png">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Как рассчитать доходность арендного бизнеса: три формулы и ошибка, которую делают все</title>
 <meta name="description" content="Cap rate, ROI и IRR — что реально важно инвестору в России. Почему IRR в аренде недвижимости часто врёт и какую формулу использовать для честного сравнения объектов.">
@@ -109,13 +100,36 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
   .related li a{font-size:14px}
   .site-header{padding:12px 16px}
 }
+
+
+.art-widget{background:#F4F6F9;border-radius:16px;padding:28px;margin:32px 0}
+.art-widget h3{font-size:16px;font-weight:800;color:#1C2B3A;margin-bottom:16px}
+.art-widget canvas{max-height:300px}
+.art-calc-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.art-calc-row label{font-size:13px;color:#5E7389;min-width:160px}
+.art-calc-row input[type=range]{flex:1;accent-color:#C8920A;min-width:120px}
+.art-calc-row .val{font-size:15px;font-weight:800;color:#1C2B3A;min-width:80px;text-align:right}
+.art-result{background:#1C2B3A;color:#fff;border-radius:12px;padding:16px 20px;margin-top:16px;font-size:15px;font-weight:700;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.art-result span{color:#C8920A;font-size:20px}
+.art-checklist{list-style:none;margin:0;padding:0}
+.art-checklist li{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:15px;line-height:1.5;color:#1A2738}
+.art-checklist input[type=checkbox]{accent-color:#C8920A;width:16px;height:16px;margin-top:3px;flex-shrink:0;cursor:pointer}
+.art-checklist label{cursor:pointer}
+.art-checklist input:checked+label{text-decoration:line-through;color:#5E7389}
+.art-timeline{position:relative;padding-left:24px;margin:0}
+.art-timeline::before{content:'';position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:#DDE3EC}
+.art-timeline li{position:relative;margin-bottom:16px;list-style:none}
+.art-timeline li::before{content:'';position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:#C8920A;border:2px solid #fff;box-shadow:0 0 0 2px #C8920A}
+.art-timeline .tl-year{font-size:12px;font-weight:800;color:#C8920A;text-transform:uppercase;letter-spacing:.5px}
+.art-timeline .tl-text{font-size:14px;color:#3A4F65;margin-top:2px}
+.art-quiz-q{font-size:15px;font-weight:700;color:#1C2B3A;margin-bottom:10px}
+.art-quiz-btns{display:flex;gap:10px;flex-wrap:wrap}
+.art-quiz-btns button{background:#fff;border:2px solid #DDE3EC;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:700;cursor:pointer;color:#1C2B3A;transition:all .2s}
+.art-quiz-btns button:hover,.art-quiz-btns button.active{background:#C8920A;border-color:#C8920A;color:#fff}
+.art-quiz-result{background:#1C2B3A;color:#fff;border-radius:12px;padding:16px 20px;margin-top:16px;font-size:15px;font-weight:700;display:none}
+.art-quiz-result.show{display:block}
+
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Что такое cap rate и как его считать?',"acceptedAnswer":{"@type":"Answer","text":'Cap rate (ставка капитализации) = Годовая аренда / Стоимость объекта × 100%. Для Ольховской 45с1 в первый год: 2 160 000 / 29 000 000 × 100% = 7,45%. Это базовая метрика, не учитывающая рост аренды и актива.'}},
-{"@type":"Question","name":'Чем ROI отличается от cap rate?',"acceptedAnswer":{"@type":"Answer","text":'Cap rate — доходность от аренды в конкретный год. ROI (Return on Investment) учитывает всё: аренду за весь период, изменение стоимости актива, налоговый эффект. За 5 лет ROI по Ольховской 45с1 составляет ~73% (~14,6%/год).'}},
-{"@type":"Question","name":'Почему IRR часто показывает меньше чем ROI?',"acceptedAnswer":{"@type":"Answer","text":'IRR предполагает реинвестирование промежуточных денежных потоков по той же ставке. Если вы не находите аналогичных объектов для реинвестирования (а это сложно в ЦАО), IRR переоценивает или недооценивает реальную доходность. Для практических расчётов ROI + cap rate более понятны.'}}]}
-</script>
-<style>details[open] summary span{transform:rotate(45deg)}details summary::-webkit-details-marker{display:none}</style>
 </head>
 <body>
 <header class="site-header">
@@ -150,6 +164,53 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <p>Объект А: аренда 300 000 ₽/мес, цена 30 млн, cap rate 12%. Нет индексации, арендатор нестабильный, район с высокой вакантностью.</p>
 <p>Объект Б: аренда 180 000 ₽/мес, цена 29 млн, cap rate 7,45%. Индексация 10%/год, договор 5 лет, арендатор у трёх вокзалов.</p>
 <p>По cap rate побеждает объект А. По реальным деньгам через 5 лет — объект Б.</p>
+
+<div class="art-widget">
+<h3>Калькулятор инвестора: Cap Rate, ROI, IRR</h3>
+<div class="art-calc-row">
+  <label>Цена покупки (млн ₽)</label>
+  <input type="range" id="a11price" min="5" max="100" step="1" value="29" oninput="calcA11()">
+  <div class="val" id="a11priceV">29 млн ₽</div>
+</div>
+<div class="art-calc-row">
+  <label>Аренда в месяц (₽)</label>
+  <input type="range" id="a11rent" min="50000" max="600000" step="10000" value="180000" oninput="calcA11()">
+  <div class="val" id="a11rentV">180 000 ₽</div>
+</div>
+<div class="art-calc-row">
+  <label>Горизонт (лет)</label>
+  <input type="range" id="a11yr" min="1" max="10" step="1" value="5" oninput="calcA11()">
+  <div class="val" id="a11yrV">5 лет</div>
+</div>
+<div class="art-result">
+  <div>Cap Rate: <span id="a11cap">—</span></div>
+  <div>ROI (с ростом актива): <span id="a11roi">—</span></div>
+  <div>Approx IRR: <span id="a11irr">—</span></div>
+</div>
+<script>
+(function(){
+  window.calcA11=function(){
+    var p=parseInt(document.getElementById('a11price').value)*1000000;
+    var r=parseInt(document.getElementById('a11rent').value);
+    var yr=parseInt(document.getElementById('a11yr').value);
+    document.getElementById('a11priceV').textContent=parseInt(document.getElementById('a11price').value)+' млн ₽';
+    document.getElementById('a11rentV').textContent=r.toLocaleString('ru')+' ₽';
+    document.getElementById('a11yrV').textContent=yr+' лет';
+    var noi=r*12;
+    var cap=((noi/p)*100).toFixed(1);
+    var exitVal=p*Math.pow(1.05,yr);
+    var totalIncome=0;for(var i=0;i<yr;i++)totalIncome+=r*12*Math.pow(1.1,i);
+    var roi=(((totalIncome+exitVal-p)/p)*100).toFixed(0);
+    // approx IRR: solve (exitVal+totalIncome)=p*(1+irr)^yr roughly
+    var irr=((Math.pow((totalIncome+exitVal)/p,1/yr)-1)*100).toFixed(1);
+    document.getElementById('a11cap').textContent=cap+'%';
+    document.getElementById('a11roi').textContent=roi+'%';
+    document.getElementById('a11irr').textContent=irr+'%/год';
+  };
+  calcA11();
+})();
+</script>
+</div>
 <h2>Формула вторая: ROI (возврат на инвестиции)</h2>
 <p><strong>Формула:</strong> (Прибыль за период / Инвестиции) × 100%</p>
 <p>ROI учитывает не только доход от аренды, но и прирост стоимости объекта. Это уже более полная картина.</p>
@@ -213,6 +274,31 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 </tbody></table></div>
 <p>Разница ROI: 73% vs 51,7%. Это ~6 миллионов рублей в абсолютных числах.</p>
 <p>Чтобы депозит «поймал» недвижимость — ставка ЦБ должна остаться выше 14% на все 5 лет. Это маловероятно по прогнозам ЦБ.</p>
+
+<!-- art-widgets-v1 -->
+<div class="art-widget">
+<h3>Рост капитала по разным сценариям расчёта (объект 29 млн, аренда 180к/мес)</h3>
+<canvas id="a11line" height="220"></canvas>
+<script>
+(function(){
+  var ctx=document.getElementById('a11line').getContext('2d');
+  var p=29,r=180000*12/1000000;
+  var labels=['Год 0'];for(var i=1;i<=7;i++)labels.push('Год '+i);
+  var capRate=[p],roi=[p],irr=[p];
+  for(var y=1;y<=7;y++){
+    capRate.push(+(p+r*y).toFixed(2));
+    var rent=0;for(var k=0;k<y;k++)rent+=r*Math.pow(1.1,k);
+    roi.push(+(p*Math.pow(1.05,y)+rent).toFixed(2));
+    irr.push(+(p*Math.pow(1.148,y)).toFixed(2));
+  }
+  new Chart(ctx,{type:'line',data:{labels:labels,datasets:[
+    {label:'Только аренда (Cap Rate)',data:capRate,borderColor:'#2AABEE',tension:0.3,pointBackgroundColor:'#2AABEE'},
+    {label:'Аренда+рост актива (ROI)',data:roi,borderColor:'#C8920A',tension:0.3,pointBackgroundColor:'#C8920A'},
+    {label:'IRR-сценарий (реинвест)',data:irr,borderColor:'#1C2B3A',tension:0.3,pointBackgroundColor:'#1C2B3A'}
+  ]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:function(v){return v.toFixed(0)+' млн'}}}}}});
+})();
+</script>
+</div>
 <h2>Где все делают ошибку</h2>
 <p>Самая частая ошибка — брать cap rate первого года и сравнивать его с ставкой по депозиту. «7,45% vs 12,5% — конечно депозит». Это некорректное сравнение, потому что:</p>
 <ul>
@@ -223,27 +309,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <p>Правильное сравнение: ROI за горизонт vs депозит за горизонт с учётом падения ставки и налогов.</p>
 <p>Тот, кто считает только cap rate первого года, видит 30% картины. Остальные 70% — это индексация, рост актива и налоговый эффект. Именно они определяют, богаче ли вы стали через пять лет.</p>
 
-  
-<div style="display:flex;align-items:center;gap:16px;background:#F4F6F9;border-radius:14px;padding:20px 24px;margin:40px 0;">
-  <img src="/media/grigory.jpeg" alt="Григорий Куприн" loading="lazy"
-    style="width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:top center;flex-shrink:0;">
-  <div>
-    <div style="font-size:12px;color:#5E7389;font-weight:600;margin-bottom:4px;">Автор материала</div>
-    <div style="font-size:16px;font-weight:800;color:#1C2B3A;margin-bottom:6px;">Григорий Куприн</div>
-    <div style="font-size:13px;color:#3A4F65;margin-bottom:8px;">Владелец объекта Ольховская 45с1. Продаёт напрямую, без агентов.</div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="https://t.me/GrigoryKuprin" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#2AABEE;text-decoration:none;">✈️ Telegram</a>
-      <a href="https://vk.com/kupringrigory" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#0077FF;text-decoration:none;">VK</a>
-      <a href="https://max.ru/u/f9LHodD0cOIZCQ2tWZIr45eCUuEKm4Kqyqbih5kht8iCNAX4yll6XkoNpYg" target="_blank" rel="noopener"
-        style="font-size:12px;font-weight:700;color:#FF4D00;text-decoration:none;">MAX</a>
-      <a href="https://olhovka45.ru" style="font-size:12px;font-weight:700;color:#C8920A;text-decoration:none;">olhovka45.ru</a>
-    </div>
-  </div>
-</div>
-
-<div class="art-cta">
+  <div class="art-cta">
     <div class="art-cta-text">
       <h3>Ольховская 45с1 — объект в продаже</h3>
       <p>93 м² · ЦАО · Хостел · 180 000 ₽/мес · 14,6% годовых · 0% налога после 5 лет</p>
@@ -251,38 +317,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     <a href="https://olhovka45.ru">Смотреть объект →</a>
   </div>
 
-  <div style="margin:40px 0;">
-<h2 style="font-size:22px;font-weight:900;color:#1C2B3A;margin-bottom:20px;">Вопросы и ответы</h2>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Что такое cap rate и как его считать?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    Cap rate (ставка капитализации) = Годовая аренда / Стоимость объекта × 100%. Для Ольховской 45с1 в первый год: 2 160 000 / 29 000 000 × 100% = 7,45%. Это базовая метрика, не учитывающая рост аренды и актива.
-  </div>
-</details>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Чем ROI отличается от cap rate?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    Cap rate — доходность от аренды в конкретный год. ROI (Return on Investment) учитывает всё: аренду за весь период, изменение стоимости актива, налоговый эффект. За 5 лет ROI по Ольховской 45с1 составляет ~73% (~14,6%/год).
-  </div>
-</details>
-<details style="border:1px solid #DDE3EC;border-radius:12px;margin-bottom:10px;overflow:hidden;">
-  <summary style="padding:16px 20px;font-size:16px;font-weight:700;color:#1C2B3A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-    Почему IRR часто показывает меньше чем ROI?
-    <span style="font-size:20px;color:#C8920A;flex-shrink:0;margin-left:12px;">+</span>
-  </summary>
-  <div style="padding:0 20px 18px;font-size:15px;color:#3A4F65;line-height:1.7;background:#F4F6F9;">
-    IRR предполагает реинвестирование промежуточных денежных потоков по той же ставке. Если вы не находите аналогичных объектов для реинвестирования (а это сложно в ЦАО), IRR переоценивает или недооценивает реальную доходность. Для практических расчётов ROI + cap rate более понятны.
-  </div>
-</details>
-</div>
-
-<nav class="related" aria-label="Другие статьи">
+  <nav class="related" aria-label="Другие статьи">
     <h3>Читайте также</h3>
     <ul>
       <li><a href="/articles/article-03-dokhodnost-kommercheskoy/">Доходность коммерческой недвижимости в Москве: реальные цифры 2026</a></li>
@@ -293,5 +328,8 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     </ul>
   </nav>
 </main>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
