@@ -130,6 +130,8 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 .art-quiz-result.show{display:block}
 
 </style>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <header class="site-header">
@@ -160,12 +162,96 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 </tbody></table></div>
 <p>Цифры выше — средние по Москве, не худший сценарий. При ставке 12,5% по депозиту эти 6 месяцев простоя обходятся ещё в 181 250 ₽ упущенной доходности. Считайте сами.</p>
 
-<div class="art-widget">
-<h3>Калькулятор потерь от простоя</h3>
-<div class="art-calc-row">
-  <label>Месячная аренда (₽)</label>
-  <input type="range" id="a01rent" min="80000" max="500000" step="10000" value="180000" oninput="calcA01()">
-  <div class="val" id="a01rentV">180 000 ₽</div>
+<div style="background:#F4F6F9;border-radius:16px;padding:28px;margin:32px 0;">
+  <div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#C8920A;margin-bottom:20px;">Калькулятор потерь от простоя</div>
+
+  <div style="display:grid;gap:16px;margin-bottom:20px;">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+      <label style="font-size:13px;color:#5E7389;min-width:160px;">Месячная аренда</label>
+      <input type="range" id="a01rent" min="50000" max="600000" step="10000" value="180000"
+        style="flex:1;min-width:140px;accent-color:#C8920A;" oninput="calcA01(this)">
+      <span id="a01rentV" style="font-size:17px;font-weight:900;color:#1C2B3A;min-width:100px;text-align:right;">180 000 ₽</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+      <label style="font-size:13px;color:#5E7389;min-width:160px;">Месяцев простоя</label>
+      <input type="range" id="a01idle" min="1" max="12" step="1" value="4"
+        style="flex:1;min-width:140px;accent-color:#C8920A;" oninput="calcA01(this)">
+      <span id="a01idleV" style="font-size:17px;font-weight:900;color:#1C2B3A;min-width:100px;text-align:right;">4 мес.</span>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">
+    <div style="background:#fff;border-radius:12px;padding:16px;text-align:center;">
+      <div style="font-size:11px;color:#5E7389;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Потери аренды</div>
+      <div id="a01loss1" style="font-size:22px;font-weight:900;color:#C8920A;">720 000 ₽</div>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:16px;text-align:center;">
+      <div style="font-size:11px;color:#5E7389;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Комм. + брокер</div>
+      <div id="a01loss2" style="font-size:22px;font-weight:900;color:#C8920A;">~280 000 ₽</div>
+    </div>
+    <div style="background:#1C2B3A;border-radius:12px;padding:16px;text-align:center;">
+      <div style="font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Итого потерь</div>
+      <div id="a01total" style="font-size:22px;font-weight:900;color:#C8920A;">~1 000 000 ₽</div>
+    </div>
+  </div>
+
+  <canvas id="a01chart" style="max-height:220px;"></canvas>
+</div>
+
+<script>
+(function(){
+  var _rent = 180000, _idle = 4, _chart = null;
+
+  function fmt(n){ return Math.round(n).toLocaleString('ru') + ' ₽'; }
+
+  function buildChart(){
+    var ctx = document.getElementById('a01chart').getContext('2d');
+    _chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['С арендатором (12 мес)', 'Без арендатора (простой)'],
+        datasets: [{
+          label: 'Доход за год, ₽',
+          data: [_rent * 12, _rent * (12 - _idle)],
+          backgroundColor: ['#C8920A', '#CBD5E1'],
+          borderRadius: 8,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false },
+          tooltip: { callbacks: { label: function(c){ return fmt(c.raw); } } }
+        },
+        scales: { y: { ticks: { callback: function(v){ return (v/1000) + 'к'; } }, grid: { color: '#EEF2F7' } },
+                  x: { grid: { display: false } } }
+      }
+    });
+  }
+
+  window.calcA01 = function(){
+    _rent = parseInt(document.getElementById('a01rent').value);
+    _idle = parseInt(document.getElementById('a01idle').value);
+    document.getElementById('a01rentV').textContent = fmt(_rent).replace(' ₽','') + ' ₽';
+    document.getElementById('a01idleV').textContent = _idle + ' мес.';
+    var l1 = _rent * _idle;
+    var l2 = Math.round(_idle * 22000 + _rent * 0.5);
+    document.getElementById('a01loss1').textContent = fmt(l1);
+    document.getElementById('a01loss2').textContent = '~' + fmt(l2);
+    document.getElementById('a01total').textContent = '~' + fmt(l1 + l2);
+    if(_chart){
+      _chart.data.datasets[0].data = [_rent * 12, _rent * (12 - _idle)];
+      _chart.update();
+    }
+  };
+
+  if(typeof Chart !== 'undefined'){
+    buildChart();
+  } else {
+    window.addEventListener('load', buildChart);
+  }
+})();
+</script>
 </div>
 <div class="art-calc-row">
   <label>Месяцев простоя</label>
@@ -228,39 +314,90 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 <p>За 5 лет суммарно: 13,2 млн рублей аренды плюс ~8 млн прироста стоимости объекта. Итого ~21 млн на вложенные 29 млн — это 72% прибыли за горизонт без налогов при продаже после 5 лет (ст. 217.1 НК РФ).</p>
 <h2>Чек-лист покупателя ГАБа в Москве</h2>
 <p>Перед подписанием нужно проверить:</p>
-<ul>
-<li>[ ] Выписка из ЕГРН — нет ли обременений, арестов, залогов</li>
-<li>[ ] История платежей арендатора за последние 12 месяцев (банковские выписки)</li>
-<li>[ ] Оригинал договора аренды — дата, стороны, индексация, расторжение</li>
-<li>[ ] Акты сверки с арендатором — нет ли задолженности</li>
-<li>[ ] Технический паспорт — соответствие реальной площади заявленной</li>
-<li>[ ] Разрешённое использование — соответствует ли бизнесу арендатора</li>
-<li>[ ] Коммунальные договоры — кто платит, нет ли долгов</li>
-<li>[ ] Обеспечительный платёж — размер и условия возврата</li>
-<li>[ ] Страховка объекта — есть ли, кто платит</li>
-<li>[ ] Регистрация договора в Росреестре — если срок более 1 года</li>
-</ul>
+<div style="background:#F4F6F9;border-radius:16px;padding:28px;margin:28px 0;">
+  <div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#C8920A;margin-bottom:16px;">Чек-лист покупателя</div>
+  <div id="checkProgress" style="font-size:13px;color:#5E7389;margin-bottom:16px;">Отмечено: <strong id="checkCount">0</strong> из 8 пунктов</div>
+  <div style="height:4px;background:#DDE3EC;border-radius:2px;margin-bottom:20px;overflow:hidden;">
+    <div id="checkBar" style="height:100%;background:#C8920A;border-radius:2px;width:0%;transition:width .3s;"></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:0;">
+    <label class="chk-item"><input type="checkbox" onchange="updateChecklist()"><span>История платежей арендатора за последние 12 месяцев</span></label>
+    <label class="chk-item"><input type="checkbox" onchange="updateChecklist()"><span>Оригинал договора аренды с печатями и подписями</span></label>
+    <label class="chk-item"><input type="checkbox" onchange="updateChecklist()"><span>Размер вложений арендатора в ремонт (подтверждённый)</span></label>
+    <label class="chk-item"><input type="checkbox" onchange="updateChecklist()"><span>Выписка ЕГРН — проверить собственника и обременения</span></label>
+    <label class="chk-item"><input type="checkbox" onchange="updateChecklist()"><span>Назначение здания: нежилое (проверить по кадастру)</span></label>
+    <label class="chk-item"><input type="checkbox" onchange="updateChecklist()"><span>Источники трафика арендатора — не зависят ли от одного канала</span></label>
+    <label class="chk-item"><input type="checkbox" onchange="updateChecklist()"><span>Страховка объекта — есть ли, кто платит</span></label>
+    <label class="chk-item" style="border-bottom:none;"><input type="checkbox" onchange="updateChecklist()"><span>Регистрация договора в Росреестре (если срок &gt; 1 года)</span></label>
+  </div>
+</div>
+<style>
+.chk-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #E8ECF2;cursor:pointer;transition:background .15s;}
+.chk-item:hover{background:rgba(200,146,10,.04);border-radius:8px;padding:12px 8px;margin:0 -8px;}
+.chk-item input[type=checkbox]{width:18px;height:18px;accent-color:#C8920A;flex-shrink:0;margin-top:2px;cursor:pointer;}
+.chk-item span{font-size:15px;color:#1A2738;line-height:1.5;transition:color .2s;}
+.chk-item input:checked ~ span{color:#8AABB0;text-decoration:line-through;}
+</style>
+<script>
+function updateChecklist(){
+  var boxes=document.querySelectorAll('.chk-item input[type=checkbox]');
+  var done=[].filter.call(boxes,function(b){return b.checked}).length;
+  document.getElementById('checkCount').textContent=done;
+  document.getElementById('checkBar').style.width=(done/boxes.length*100)+'%';
+  if(done===boxes.length){
+    document.getElementById('checkBar').style.background='#1A7F4B';
+    document.getElementById('checkProgress').innerHTML='✅ <strong>Все пункты проверены</strong> — можно идти на сделку';
+  }
+}
+</script>
 <p>Последний пункт многие игнорируют. Незарегистрированный долгосрочный договор аренды не обязывает нового собственника его соблюдать. Технически после продажи объекта арендатор оказывается без защиты. На практике это создаёт споры и судебные риски.</p>
 
 <!-- art-widgets-v1 -->
-<div class="art-widget">
-<h3>Доходность: с арендатором vs без — по годам</h3>
-<canvas id="a01bar2" height="200"></canvas>
+<div style="background:#F4F6F9;border-radius:16px;padding:28px;margin:32px 0;">
+  <div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#C8920A;margin-bottom:8px;">Сравнение доходности</div>
+  <div style="font-size:14px;color:#5E7389;margin-bottom:20px;">Накопленная аренда за 5 лет — с арендатором vs простой в год 1</div>
+  <canvas id="a01bar2" style="max-height:260px;"></canvas>
+</div>
 <script>
 (function(){
-  var ctx=document.getElementById('a01bar2').getContext('2d');
-  var base=180000*12;
-  var labels=['Год 1','Год 2','Год 3','Год 4','Год 5'];
-  var withT=[],noT=[];
-  for(var i=0;i<5;i++){
-    withT.push(Math.round(base*Math.pow(1.1,i)));
-    noT.push(i===0?0:Math.round(base*Math.pow(1.1,i-1)));
+  function init(){
+    var base = 180000 * 12;
+    var labels = ['Год 1','Год 2','Год 3','Год 4','Год 5'];
+    var withT = [], noT = [], cumWith = 0, cumNo = 0;
+    for(var i = 0; i < 5; i++){
+      var yr = Math.round(base * Math.pow(1.1, i));
+      var yrNo = i === 0 ? 0 : Math.round(base * Math.pow(1.1, i-1));
+      cumWith += yr; cumNo += yrNo;
+      withT.push(cumWith); noT.push(cumNo);
+    }
+    var ctx = document.getElementById('a01bar2').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          { label: 'С арендатором (накоплено)', data: withT, backgroundColor: '#C8920A', borderRadius: 6, borderSkipped: false },
+          { label: 'Без арендатора (простой год 1)', data: noT, backgroundColor: '#CBD5E1', borderRadius: 6, borderSkipped: false }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom', labels: { padding: 16, font: { size: 13 } } },
+          tooltip: { callbacks: { label: function(c){ return c.dataset.label + ': ' + Math.round(c.raw).toLocaleString('ru') + ' ₽'; } } }
+        },
+        scales: {
+          y: { ticks: { callback: function(v){ return (v/1000000).toFixed(1) + ' млн'; } }, grid: { color: '#EEF2F7' } },
+          x: { grid: { display: false } }
+        }
+      }
+    });
   }
-  new Chart(ctx,{type:'bar',data:{labels:labels,datasets:[{label:'С арендатором',data:withT,backgroundColor:'#C8920A'},{label:'Без арендатора (простой год 1)',data:noT,backgroundColor:'#E0E6EF'}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:function(v){return(v/1000000).toFixed(1)+'М'}}}}}});
+  if(typeof Chart !== 'undefined'){ init(); } else { window.addEventListener('load', init); }
 })();
 </script>
-</div>
-<h2>Что в итоге</h2>
+
+<h2><h2>Что в итоге</h2>
 <p>Купить коммерческую недвижимость с арендатором — это купить денежный поток, а не просто стены. Цена этого потока должна быть справедливой. Способ проверки — не интуиция, а цифры: история платежей, условия договора, размер вложений арендатора, потенциал рынка.</p>
 <p>Пустое помещение дешевле на входе, но дороже в эксплуатации. Если у вас нет готового арендатора в кармане — считайте реальные потери от простоя, а не только цену покупки.</p>
 <p>Лучший объект — не самый дешёвый. Лучший объект — тот, где арендатор не хочет уходить.</p>
@@ -285,7 +422,5 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
   </nav>
 </main>
 
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
