@@ -1026,6 +1026,7 @@ body, button, input, select, textarea {
       <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border);">
         <button onclick="openMemoModal()" class="btn-memo" style="width:100%;justify-content:center;">⬇ Скачать меморандум PDF</button>
         <div style="font-size:11px;color:var(--soft);margin-top:8px;text-align:center;">4 страницы · финмодель · арендатор · локация</div>
+        <div class="memo-counter" style="display:none;font-size:11px;color:#C8920A;font-weight:700;text-align:center;margin-top:4px;"></div>
       </div>
     </div>
   </div>
@@ -1354,6 +1355,95 @@ body, button, input, select, textarea {
 </section>
 
 
+<!-- FAQ -->
+<section id="faq" style="background:var(--off);padding:72px 32px;">
+  <div style="max-width:760px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div style="font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:#C8920A;margin-bottom:12px;">Частые вопросы</div>
+      <h2 style="font-size:32px;font-weight:900;color:#1C2B3A;margin:0;">Отвечаю на то, что спрашивают чаще всего</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px;">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Цена окончательная или торг возможен?
+          <span class="faq-arrow">▸</span>
+        </button>
+        <div class="faq-a">
+          Готов к разумному диалогу. Объект уникальный — действующий хостел с договором на 5 лет в ЦАО у трёх вокзалов. Таких немного. Цена в 29 млн соответствует рынку: аналогичные объекты в округе торгуются от 32 млн. Если у вас есть конкретное предложение — обсудим при встрече.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Что если арендатор уйдёт раньше срока?
+          <span class="faq-arrow">▸</span>
+        </button>
+        <div class="faq-a">
+          Договор зарегистрирован в Росреестре. Досрочный выход — только через суд или обоюдное согласие с выплатой неустойки. Арендатор сделал ремонт под хостел за свои деньги — уйти для него значит потерять собственные вложения. Это сильнее любого договора. Но даже если смена всё же произойдёт: 93 м² в ЦАО, три входа метро в пешей доступности — объект не простоит пустым.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Можно купить с ипотекой или через ИП / юрлицо?
+          <span class="faq-arrow">▸</span>
+        </button>
+        <div class="faq-a">
+          Да по всем трём вариантам. Ипотека на нежилую коммерцию — Сбер, Альфа, ПСБ, взнос от 30%. При аренде 180 000 ₽/мес платёж по ипотеке частично или полностью перекрывается арендой — зависит от суммы и срока. Покупка через ИП на УСН или юрлицо — тоже рабочий вариант, уточним нюансы при встрече.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Какие документы есть на объект?
+          <span class="faq-arrow">▸</span>
+        </button>
+        <div class="faq-a">
+          Готов к показу: выписка ЕГРН, технический паспорт, договор аренды с приложениями и актом приёма-передачи, справки об отсутствии обременений. Документы предоставлю заранее для проверки вашим юристом — без необходимости приезжать. Напишите в Telegram, вышлю пакет.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Когда можно посмотреть объект?
+          <span class="faq-arrow">▸</span>
+        </button>
+        <div class="faq-a">
+          В любой день, включая выходные — договоримся под ваш график. Покажу работающий хостел, познакомлю с арендатором лично, он готов к разговору с потенциальным покупателем. Пишите в Telegram или звоните — согласуем время за 5 минут.
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="https://t.me/GrigoryKuprin?text=Есть+вопрос+по+объекту+на+Ольховской+45" target="_blank" rel="noopener"
+        style="display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:#1C2B3A;color:#fff;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;"
+        onclick="reachGoal('faq_tg_click')">
+        ✈ Задать вопрос в Telegram
+      </a>
+    </div>
+  </div>
+</section>
+<style>
+.faq-item { background:#fff; border-radius:12px; overflow:hidden; }
+.faq-q {
+  width:100%; display:flex; justify-content:space-between; align-items:center; gap:16px;
+  padding:20px 24px; background:none; border:none; text-align:left;
+  font-size:16px; font-weight:700; color:#1C2B3A; cursor:pointer; font-family:inherit;
+  transition:background .15s;
+}
+.faq-q:hover { background:#F8F4EC; }
+.faq-q.open { background:#FDF8EE; color:#C8920A; }
+.faq-arrow { font-size:13px; flex-shrink:0; transition:transform .25s; color:#C8920A; }
+.faq-q.open .faq-arrow { transform:rotate(90deg); }
+.faq-a {
+  display:none; padding:0 24px 20px; font-size:15px; color:#3A4F65; line-height:1.75;
+  border-top:1px solid #F0F3F7;
+}
+.faq-a.open { display:block; }
+@media(max-width:600px){ .faq-q { font-size:15px; padding:16px 18px; } .faq-a { padding:0 18px 16px; } }
+</style>
+
 <!-- OWNER -->
 <section id="owner" style="background:#fff;padding:72px 32px;">
   <div style="max-width:1100px;margin:0 auto;">
@@ -1604,39 +1694,26 @@ body, button, input, select, textarea {
     <div id="memoStep1">
       <label style="display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#5E7389;margin-bottom:8px;">Ваш email</label>
       <input id="memoEmail" type="email" placeholder="investor@example.com"
-        style="width:100%;padding:13px 16px;border:2px solid #DDE3EC;border-radius:10px;font-size:16px;font-family:inherit;outline:none;transition:border-color .2s;"
+        style="width:100%;padding:13px 16px;border:2px solid #DDE3EC;border-radius:10px;font-size:16px;font-family:inherit;outline:none;transition:border-color .2s;box-sizing:border-box;"
         onfocus="this.style.borderColor='#C8920A'" onblur="this.style.borderColor='#DDE3EC'"
-        onkeydown="if(event.key==='Enter')sendOtp()">
+        onkeydown="if(event.key==='Enter')requestPdf()">
       <div id="memoEmailErr" style="color:#c0392b;font-size:13px;margin-top:8px;display:none;"></div>
-      <div style="font-size:12px;color:#8AAABB;margin-top:10px;margin-bottom:20px;">Пришлём 6-значный код. Соглашаясь, вы разрешаете получать информацию об объекте.</div>
-      <button onclick="sendOtp()" id="memoBtnSend"
+      <div style="font-size:12px;color:#8AAABB;margin-top:10px;margin-bottom:20px;">PDF скачается сразу. Также пришлём финмодель и материалы по объекту.</div>
+      <button onclick="requestPdf()" id="memoBtnSend"
         style="width:100%;background:#C8920A;color:#fff;border:none;padding:15px;border-radius:10px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;transition:background .2s;">
-        Получить код →
+        Скачать меморандум PDF →
       </button>
     </div>
-    <div id="memoStep2" style="display:none;">
-      <div style="font-size:13px;color:#3A4F65;margin-bottom:16px;">Код отправлен на <strong id="memoEmailShow"></strong></div>
-      <label style="display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#5E7389;margin-bottom:8px;">Код из письма</label>
-      <input id="memoOtp" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="● ● ● ● ● ●"
-        style="width:100%;padding:16px;border:2px solid #DDE3EC;border-radius:10px;font-size:28px;font-weight:900;text-align:center;letter-spacing:10px;font-family:inherit;outline:none;transition:border-color .2s;"
-        onfocus="this.style.borderColor='#C8920A'" onblur="this.style.borderColor='#DDE3EC'"
-        onkeydown="if(event.key==='Enter')verifyOtp()">
-      <div id="memoOtpErr" style="color:#c0392b;font-size:13px;margin-top:8px;display:none;"></div>
-      <button onclick="verifyOtp()" id="memoBtnVerify"
-        style="width:100%;background:#1C2B3A;color:#fff;border:none;padding:15px;border-radius:10px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;margin-top:16px;transition:background .2s;">
-        Скачать PDF
-      </button>
-      <button onclick="resetMemoModal()"
-        style="width:100%;background:none;border:none;color:#8AAABB;font-size:13px;cursor:pointer;margin-top:12px;font-family:inherit;">
-        ← Изменить email
-      </button>
-    </div>
-    <div id="memoStep3" style="display:none;text-align:center;">
+    <div id="memoStep2" style="display:none;text-align:center;">
       <div style="font-size:52px;margin-bottom:16px;">✅</div>
-      <div style="font-size:18px;font-weight:800;color:#1C2B3A;margin-bottom:8px;">Загрузка началась</div>
-      <div style="font-size:13px;color:#5E7389;line-height:1.6;">PDF сохранён в папке загрузок.<br>Мы можем прислать дополнительные материалы.</div>
+      <div style="font-size:18px;font-weight:800;color:#1C2B3A;margin-bottom:8px;">PDF скачивается</div>
+      <div style="font-size:13px;color:#5E7389;line-height:1.6;margin-bottom:20px;">Файл сохраняется в папке загрузок.<br>На почту придёт письмо с материалами по объекту.</div>
+      <a href="https://t.me/GrigoryKuprin?text=Скачал+меморандум%2C+есть+вопрос+по+объекту" target="_blank" rel="noopener"
+        style="display:block;background:#1C2B3A;color:#fff;text-decoration:none;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:700;margin-bottom:10px;">
+        ✈ Написать Григорию в Telegram
+      </a>
       <button onclick="closeMemoModal()"
-        style="margin-top:24px;background:#C8920A;color:#fff;border:none;padding:13px 32px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;">
+        style="background:none;border:none;color:#8AAABB;font-size:13px;cursor:pointer;font-family:inherit;">
         Закрыть
       </button>
     </div>
@@ -1722,6 +1799,16 @@ document.addEventListener('keydown', e => {
   if (e.key==='ArrowLeft')  lbNav(-1,null);
   if (e.key==='Escape')     lbClose({ target: document.getElementById('lb') });
 });
+
+// ── Stats counter ─────────────────────────────────────────
+fetch('/api/stats').then(r => r.json()).then(d => {
+  if (d.downloads > 0) {
+    document.querySelectorAll('.memo-counter').forEach(el => {
+      el.textContent = d.downloads + ' человек уже скачали';
+      el.style.display = '';
+    });
+  }
+}).catch(() => {});
 
 // ── Metrika ──────────────────────────────────────────────
 function reachGoal(name) { if (window.ym) ym(YM_ID, 'reachGoal', name); }
@@ -1863,67 +1950,50 @@ function openMemoModal() {
   reachGoal('memo_btn_click');
   document.getElementById('memoModal').style.display = 'flex';
   document.body.style.overflow = 'hidden';
-  setTimeout(() => document.getElementById('memoEmail').focus(), 100);
   reachGoal('memo_modal_open');
+  setTimeout(() => document.getElementById('memoEmail').focus(), 100);
 }
 function closeMemoModal() {
   document.getElementById('memoModal').style.display = 'none';
   document.body.style.overflow = '';
+  document.getElementById('memoStep1').style.display = '';
+  document.getElementById('memoStep2').style.display = 'none';
+  document.getElementById('memoEmail').value = '';
+  document.getElementById('memoEmailErr').style.display = 'none';
 }
 document.getElementById('memoModal').addEventListener('click', function(e) {
   if (e.target === this) closeMemoModal();
 });
-function resetMemoModal() {
-  document.getElementById('memoStep1').style.display = '';
-  document.getElementById('memoStep2').style.display = 'none';
-  document.getElementById('memoOtp').value = '';
-  document.getElementById('memoOtpErr').style.display = 'none';
-}
 function setLoading(btn, loading) { btn.disabled = loading; btn.style.opacity = loading ? '.6' : '1'; }
 function showErr(el, msg) { el.textContent = msg; el.style.display = 'block'; }
 
-async function sendOtp() {
+async function requestPdf() {
   const email = document.getElementById('memoEmail').value.trim();
-  const err = document.getElementById('memoEmailErr');
+  const err   = document.getElementById('memoEmailErr');
   err.style.display = 'none';
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showErr(err, 'Введите корректный email');
   const btn = document.getElementById('memoBtnSend');
   setLoading(btn, true);
   try {
-    const r = await fetch(API + '/send-otp', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email}) });
+    const r = await fetch(API + '/request-pdf', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email}) });
     const d = await r.json();
     if (!r.ok) return showErr(err, d.error || 'Ошибка. Попробуйте позже.');
-    document.getElementById('memoEmailShow').textContent = email;
-    document.getElementById('memoStep1').style.display = 'none';
-    document.getElementById('memoStep2').style.display = '';
-    setTimeout(() => document.getElementById('memoOtp').focus(), 100);
-    reachGoal('memo_otp_sent');
-  } catch(_) { showErr(err, 'Ошибка сети. Проверьте соединение.'); }
-  finally { setLoading(btn, false); }
-}
-
-async function verifyOtp() {
-  const email = document.getElementById('memoEmail').value.trim();
-  const code  = document.getElementById('memoOtp').value.trim();
-  const err   = document.getElementById('memoOtpErr');
-  err.style.display = 'none';
-  if (code.length !== 6) return showErr(err, 'Введите 6-значный код');
-  const btn = document.getElementById('memoBtnVerify');
-  setLoading(btn, true);
-  try {
-    const r = await fetch(API + '/verify-otp', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email,code}) });
-    const d = await r.json();
-    if (!r.ok) return showErr(err, d.error || 'Неверный код.');
-    reachGoal('memo_otp_verified');
     const a = document.createElement('a');
     a.href = API + '/download?token=' + encodeURIComponent(d.token);
     a.download = 'olhovskaya-45-memorandum.pdf';
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
-    document.getElementById('memoStep2').style.display = 'none';
-    document.getElementById('memoStep3').style.display = '';
+    document.getElementById('memoStep1').style.display = 'none';
+    document.getElementById('memoStep2').style.display = '';
     reachGoal('memo_downloaded');
   } catch(_) { showErr(err, 'Ошибка сети. Проверьте соединение.'); }
   finally { setLoading(btn, false); }
+}
+
+function toggleFaq(btn) {
+  const a = btn.nextElementSibling;
+  const open = btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(b => { b.classList.remove('open'); b.nextElementSibling.classList.remove('open'); });
+  if (!open) { btn.classList.add('open'); a.classList.add('open'); }
 }
 
 function toggleMenu() {
