@@ -1363,6 +1363,68 @@ body, button, input, select, textarea {
 }
 </style>
 
+<!-- ARTICLES -->
+<section id="articles" style="background:#F4F6F9;padding:72px 32px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:44px;">
+      <div style="font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:#C8920A;margin-bottom:12px;">Полезные материалы</div>
+      <h2 style="font-size:34px;font-weight:900;color:#1C2B3A;margin:0 0 14px;">Статьи об инвестициях в недвижимость</h2>
+      <p style="font-size:16px;color:#3A4F65;max-width:52ch;margin:0 auto;">Разбираем доходность, риски и налоги — чтобы вы принимали решения с полным пониманием цифр.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-bottom:36px;">
+      <a href="/articles/article-01-kupit-kommercheskuyu/" class="art-item">
+        <div class="art-item-tag">Выбор объекта</div>
+        <div class="art-item-title">Купить коммерческую недвижимость с арендатором: на что смотреть в 2026</div>
+        <div class="art-item-arrow">Читать →</div>
+      </a>
+      <a href="/articles/article-02-gotoviy-arendniy-biznes/" class="art-item">
+        <div class="art-item-tag">ГАБ</div>
+        <div class="art-item-title">Готовый арендный бизнес в Москве: как выбрать и не обмануться</div>
+        <div class="art-item-arrow">Читать →</div>
+      </a>
+      <a href="/articles/article-03-dokhodnost-kommercheskoy/" class="art-item">
+        <div class="art-item-tag">Доходность</div>
+        <div class="art-item-title">Доходность коммерческой недвижимости в Москве: реальные цифры 2026</div>
+        <div class="art-item-arrow">Читать →</div>
+      </a>
+      <a href="/articles/article-04-nedvizhimost-ili-depozit/" class="art-item">
+        <div class="art-item-tag">Сравнение</div>
+        <div class="art-item-title">Недвижимость или депозит: куда вложить 29 миллионов в 2026</div>
+        <div class="art-item-arrow">Читать →</div>
+      </a>
+      <a href="/articles/article-08-kuda-vlozhit-30-millionov/" class="art-item">
+        <div class="art-item-tag">Инвестиции</div>
+        <div class="art-item-title">Куда вложить 30 миллионов рублей в 2026: пять вариантов с расчётами</div>
+        <div class="art-item-arrow">Читать →</div>
+      </a>
+      <a href="/articles/article-10-ndfl-prodazha-kommercheskoy/" class="art-item">
+        <div class="art-item-tag">Налоги</div>
+        <div class="art-item-title">Нулевой НДФЛ при продаже коммерческой недвижимости: как работает ст. 217.1 НК РФ</div>
+        <div class="art-item-arrow">Читать →</div>
+      </a>
+    </div>
+    <div style="text-align:center;">
+      <a href="/articles/" style="display:inline-block;padding:14px 32px;border-radius:10px;border:2px solid #1C2B3A;color:#1C2B3A;font-size:15px;font-weight:700;text-decoration:none;transition:all .2s;"
+         onmouseover="this.style.background='#1C2B3A';this.style.color='#fff'"
+         onmouseout="this.style.background='transparent';this.style.color='#1C2B3A'">
+        Все 11 статей →
+      </a>
+    </div>
+  </div>
+</section>
+<style>
+.art-item {
+  display: flex; flex-direction: column; gap: 10px;
+  background: #fff; border-radius: 14px; padding: 22px 24px;
+  text-decoration: none; border: 1px solid #E2E8F0;
+  transition: box-shadow .2s, transform .2s;
+}
+.art-item:hover { box-shadow: 0 8px 28px rgba(28,43,58,.12); transform: translateY(-2px); }
+.art-item-tag { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #C8920A; }
+.art-item-title { font-size: 15px; font-weight: 700; color: #1C2B3A; line-height: 1.45; flex: 1; }
+.art-item-arrow { font-size: 13px; font-weight: 700; color: #C8920A; margin-top: 4px; }
+</style>
+
 <!-- DEAL -->
 <section class="deal-sec" id="deal">
   <div class="wrap">
@@ -1729,6 +1791,21 @@ async function verifyOtp() {
   } catch(_) { showErr(err, 'Ошибка сети. Проверьте соединение.'); }
   finally { setLoading(btn, false); }
 }
+
+function toggleMenu() {
+  const m = document.getElementById('mobMenu');
+  m.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobMenu').classList.remove('open');
+}
+document.addEventListener('click', function(e) {
+  const menu = document.getElementById('mobMenu');
+  const ham  = document.getElementById('ham');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !ham.contains(e.target)) {
+    menu.classList.remove('open');
+  }
+});
 </script>
 </body>
 </html>
