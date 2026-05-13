@@ -908,6 +908,20 @@ body, button, input, select, textarea {
           "addressRegion": "ЦАО"
         }
       }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Статьи об инвестициях в коммерческую недвижимость",
+      "url": "https://olhovka45.ru/articles/",
+      "numberOfItems": 11,
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"url":"https://olhovka45.ru/articles/article-01-kupit-kommercheskuyu/","name":"Купить коммерческую недвижимость в Москве с арендатором: на что смотреть в 2026"},
+        {"@type":"ListItem","position":2,"url":"https://olhovka45.ru/articles/article-02-gotoviy-arendniy-biznes/","name":"Готовый арендный бизнес в Москве: как выбрать и не обмануться"},
+        {"@type":"ListItem","position":3,"url":"https://olhovka45.ru/articles/article-03-dokhodnost-kommercheskoy/","name":"Доходность коммерческой недвижимости в Москве: реальные цифры 2026"},
+        {"@type":"ListItem","position":4,"url":"https://olhovka45.ru/articles/article-04-nedvizhimost-ili-depozit/","name":"Недвижимость или депозит: куда вложить 29 миллионов в 2026"},
+        {"@type":"ListItem","position":5,"url":"https://olhovka45.ru/articles/article-08-kuda-vlozhit-30-millionov/","name":"Куда вложить 30 миллионов рублей в 2026: пять вариантов с расчётами"},
+        {"@type":"ListItem","position":6,"url":"https://olhovka45.ru/articles/article-10-ndfl-prodazha-kommercheskoy/","name":"Нулевой НДФЛ при продаже коммерческой недвижимости: как работает ст. 217.1 НК РФ"}
+      ]
     }
   ]
 }
@@ -1642,10 +1656,14 @@ let calcUsed = false;
 let scroll75 = false;
 window.addEventListener('scroll', () => {
   if (scroll75) return;
-  const h = document.documentElement;
-  const pct = (h.scrollTop + h.clientHeight) / h.scrollHeight;
-  if (pct >= 0.75) { reachGoal('scroll_75'); scroll75 = true; }
+  const scrolled = window.scrollY || document.documentElement.scrollTop;
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  if (total > 0 && scrolled / total >= 0.75) { reachGoal('scroll_75'); scroll75 = true; }
 }, { passive: true });
+
+document.querySelectorAll('#articles .art-item').forEach(el => {
+  el.addEventListener('click', () => reachGoal('article_click'));
+});
 
 // ── Calculator ───────────────────────────────────────────
 function calcUpdate() {
